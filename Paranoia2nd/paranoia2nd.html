@@ -3,15 +3,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Character Generator 0.1</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
-		<!-- Latest compiled and minified CSS -->
+
+		<!--load Bootstrap css from CDN -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		
-		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- load app specific stylesheet -->
+		<link rel="stylesheet" href="css/main.css">
 		
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<h1>P C S</h1>
@@ -136,94 +134,10 @@
 			</div>
 			</div>
 		</form>
-		<script>
-		$(document).ready(function() {
-			var attributes = new Array('strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power');
-			
-			var skillbases = new Array('agility','dexterity','moxie','chutzpah','mech');
-			//load attributes
-			attributes.forEach(function(one_attribute) {
-					jQuery('input[name='+one_attribute+']').val(localStorage.getItem(one_attribute));
-			});
 
-			skillbases.forEach(function(one_skillbase) {
-					jQuery('input[name='+one_skillbase+'_skill_base]').val(localStorage.getItem(one_skillbase+'_skill_base'));
-			});
-
-			
-			jQuery('#generate').click(function(){
-				event.preventDefault();	
-				jQuery('#message_box').html('Random character has been generated!');
-				attributes.forEach(function(one_attribute) {
-					randomAttribute(one_attribute,20);	
-				});
-				//console.log(entry);
-				updateCarryingCapacity();
-				updateBonus();
-				updateSkillBase();
-			});
-		  
-			
-			jQuery('#save').click(function(){
-				event.preventDefault();
-				
-				//console.log(attributes);
-				attributes.forEach(function(one_attribute) {
-					localStorage.setItem(one_attribute, jQuery('input[name='+one_attribute+']').val());
-				});
-				
-				skillbases.forEach(function(one_skillbase) {
-					localStorage.setItem(one_skillbase+'_skill_base', jQuery('input[name='+one_skillbase+'_skill_base]').val());
-				});
-				
-				localStorage.setItem('damage_bonus', jQuery('input[name=strength]').val());
-				localStorage.setItem('macho_bonus', jQuery('input[name=endurance]').val());
-				
-				jQuery('#message_box').html('Saving Character Sheet!');
-			});
-			
-			jQuery('#print').click(function(){
-				event.preventDefault();
-				window.print();
-				jQuery('#message_box').html('Printing Character Sheet!');
-			});
-			
-			function randomAttribute(attribute_name,dice){
-				jQuery('input[name='+attribute_name+']').val( Math.floor((Math.random() * dice) + 1)); 
-			}
-			
-			function updateBonus(){
-				jQuery('input[name=damage_bonus]').val(jQuery('input[name=strength]').val()/4);
-				jQuery('input[name=macho_bonus]').val(jQuery('input[name=endurance]').val()/4);
-			}
-			
-			function updateSkillBase(){
-				
-				skillbases.forEach(function(one_skillbase) {
-					jQuery('input[name='+one_skillbase+'_skill_base]').val(jQuery('input[name='+one_skillbase+']').val()/4);
-				});
-			}
-			
-			function updateCarryingCapacity(){
-				jQuery('input[name=carrying_capacity]').val(jQuery('input[name=strength]').val()*5);
-			}
-			
-		});
-		</script>
-		<style>
-			body{
-				background-color:white;
-				padding:1% 0;
-			}
-			a{
-				color:black;
-			}
-			a:hover,a:visited,a:focus{
-				text-decoration:none;
-			}
-			table{
-				border:0;
-			}
-		</style>
+		<!-- load JS file after the DOM loaded to enable progessive rendering -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>	
