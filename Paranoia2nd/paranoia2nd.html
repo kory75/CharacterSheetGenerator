@@ -30,10 +30,11 @@
 					  <button type="button" class="btn btn-default">Y</button>
 					  <button type="button" class="btn btn-default">G</button>
 					  <button type="button" class="btn btn-default">B</button>
+					  <button type="button" class="btn btn-default">I</button>
 					  <button type="button" class="btn btn-default">V</button>
 					  <button type="button" class="btn btn-default">(UV)</button>
 					</div>
-				</div>	
+				</div>
 				<div class="col-md-6">	
 					<label for="player_name">Player Name</label>
 					<input type="text" name="player_name" value="" /><br />
@@ -42,15 +43,20 @@
 					    	Service Group <span class="caret"></span>
 					   </button>
 						<ul class="dropdown-menu" role="menu">
-						    <li><a href="#">SG1</a></li>
-						    <li><a href="#">SG2</a></li>
-						    <li><a href="#">SG3</a></li>
+						    <li><a href="#" title="Housing Preservation Development and Mind Control aka 'HPD&MC' HPD & MC is responsible for the health and welfare of all citizens. They house, clothe, provide medicines and make sure that everyone is a Happy Citizen. Are you Happy? Provide: Medicines and drugs">HPD&MC</a></li>
+						    <li><a href="#" title="Technical Services aka 'Tech Services' If it's broken (which it isn't), tech services can fix it. All manner of devices and weapons can be brought to them to repair. Happily, things don't need repairing often, do they citizen? Provide: Repairs">Tech Services</a></li>
+						    <li><a href="#" title="Research and Design aka 'R&D', 'The East Wind' Research and design are in charge of creating new, wonderful devices! These marvels of technology explore brave new worlds and carry out heretofore unknown functions! All troubleshooters should be proud to have R&D's experimental prototypes at their side. Provide:Experimental devices">R&D</a></li>
+						    <li><a href="#" title="Production, Logistics, and Commissary aka 'PLC' Production, Logistics, and Commissary provides needed goods and services. These include foodstuffs (Hot Fun! and Cold Fun!), drinks (Bouncy Bubble Beverage!), and clothing (One Size Fits All uniforms!). They also have all the lasers. Provide: Food! Clothes! Lasers!">PLC</a></li>
+						    <li><a href="#" title="Central Processing Unit aka 'CPU'
+Central Processing Unit ensures that all other service groups in carry out their tasks in coordination with each other. They are essential to the flawless functioning of Alpha Complex. They provide endless amounts of guiding hierarchy. Most significantly they help note potentially treasonous or promotional behavior. Provide: Records of missions, witnesses of other Troubleshooter's actions.">CPU</a></li>
+						    <li><a href="#" title="Power Services aka 'Power Services'
+Power services provides power for the entire complex! This difficult work typically involves them standing around large poles drinking Hot Fun for many hours a day. They also are in charge of reqisitioning large vehicles and devices. Power services members tend to be early risers. Provide: Big Devices and Vehicles">Power Services</a></li>
+							<li><a href="#" title="Armed Services aka 'The Army' Armed Services protects Alpha Complex from invaders from without. The fact that no one has invaded Alpha Complex in its history is testament to their excellent work! These stalwart troops are armed to the teeth and prepared to die for the safety of our complex. Provide: Heavy Weaponry">Armed Services</a></li>
 						    <li class="divider"></li>
-						    <li><a href="#">Int Sec</a></li>
+						    <li><a href="#" title="Internal Security aka 'IntSec' Unfortunately, not all citizens of Alpha Complex are Good and Loyal (tm). It has been said that a few might even be corrupt followers of the Dark Computer. But not for long, with internal security around to take care of them. Their treasonous behaviour is Being Watched, even now. Provide: Security for all Citizens. And Termination Vouchers">IntSec</a></li>
 						 </ul>
 					</div>
 				</div>	
-				
 			</div>
 			<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
 			<div id="attributes_box" class="col-md-6">
@@ -193,19 +199,33 @@
 			}
 			
 			function updateBonus(){
-				jQuery('input[name=damage_bonus]').val(jQuery('input[name=strength]').val()/4);
-				jQuery('input[name=macho_bonus]').val(jQuery('input[name=endurance]').val()/4);
+				damage_bonus = 0; macho_bonus = 0;
+				if(jQuery('input[name=strength]').val() > 13) damage_bonus = 1;
+				if(jQuery('input[name=strength]').val() > 18) damage_bonus = 2;
+				if(jQuery('input[name=endurance]').val() > 13) macho_bonus = 1;
+				if(jQuery('input[name=endurance]').val() > 18) macho_bonus = 2;
+				jQuery('input[name=damage_bonus]').val(damage_bonus);
+				jQuery('input[name=macho_bonus]').val(macho_bonus);
 			}
 			
 			function updateSkillBase(){
-				
 				skillbases.forEach(function(one_skillbase) {
-					jQuery('input[name='+one_skillbase+'_skill_base]').val(jQuery('input[name='+one_skillbase+']').val()/4);
+					skill_base_value=0; 
+					if ( jQuery('input[name='+one_skillbase+']').val() > 3 )  skill_base_value=1;
+					if ( jQuery('input[name='+one_skillbase+']').val() > 6 )  skill_base_value=2; 
+					if ( jQuery('input[name='+one_skillbase+']').val() > 10 )  skill_base_value=3; 
+					if ( jQuery('input[name='+one_skillbase+']').val() > 14 )  skill_base_value=4; 
+					if ( jQuery('input[name='+one_skillbase+']').val() > 17 )  skill_base_value=5; 
+					jQuery('input[name='+one_skillbase+'_skill_base]').val(skill_base_value);
 				});
 			}
 			
 			function updateCarryingCapacity(){
-				jQuery('input[name=carrying_capacity]').val(jQuery('input[name=strength]').val()*5);
+				carrying_capacity_base = 0
+				if (jQuery('input[name=strength]').val()>12){
+					carrying_capacity_base = jQuery('input[name=strength]').val() - 12;
+				}
+				jQuery('input[name=carrying_capacity]').val( ((carrying_capacity_base)*5)+25 );
 			}
 			
 		});
@@ -223,6 +243,12 @@
 			}
 			table{
 				border:0;
+			}
+			@media print{
+				body{
+					background: white;
+					color:black;
+				}
 			}
 		</style>
 	</body>
