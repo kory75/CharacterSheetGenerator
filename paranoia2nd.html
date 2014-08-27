@@ -1,0 +1,227 @@
+<html>
+	<head>
+		<title>Character Generator 0.1</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<h1>P C S</h1>
+		<form action="" method="GET">
+			<a id="generate" class="glyphicon glyphicon-edit"  href="#">Random</a>
+			<a id="save" class="glyphicon glyphicon-floppy-save" href="#">Save</a>
+			<a id="print" class="glyphicon glyphicon-print" href="#">Print</a>
+			<div id="top-box" class="col-md-12">
+				<div class="col-md-6">
+					<label for="character_name">Character Name</label>
+					<input type="text" name="character_name" value="" /><br />
+					<div class="btn-group">
+					  <button type="button" class="btn btn-default">(IR)</button>
+					  <button type="button" class="btn btn-default">R</button>
+					  <button type="button" class="btn btn-default">O</button>
+					  <button type="button" class="btn btn-default">Y</button>
+					  <button type="button" class="btn btn-default">G</button>
+					  <button type="button" class="btn btn-default">B</button>
+					  <button type="button" class="btn btn-default">V</button>
+					  <button type="button" class="btn btn-default">(UV)</button>
+					</div>
+				</div>	
+				<div class="col-md-6">	
+					<label for="player_name">Player Name</label>
+					<input type="text" name="player_name" value="" /><br />
+					<div class="btn-group">
+					   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					    	Service Group <span class="caret"></span>
+					   </button>
+						<ul class="dropdown-menu" role="menu">
+						    <li><a href="#">SG1</a></li>
+						    <li><a href="#">SG2</a></li>
+						    <li><a href="#">SG3</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#">Int Sec</a></li>
+						 </ul>
+					</div>
+				</div>	
+				
+			</div>
+			<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
+			<div id="attributes_box" class="col-md-6">
+				<h2>Attributes</h2>
+				<div id="attributes_box_left" class="col-md-6">
+					<label for="strength">Strength</label>
+					<input type="text" name="strength" value=""  /><br />
+					<br /><br /><br />
+					<label for="endurance">Endurance</label>
+					<input type="text" name="endurance" value=""  /><br />
+					<label for="agility">Agility</label>
+					<input type="text" name="agility" value=""  /><br />
+					<label for="dexterity">Dexterity</label>
+					<input type="text" name="dexterity" value=""  /><br />
+					<label for="moxie">Moxie</label>
+					<input type="text" name="moxie" value=""  /><br />
+					<label for="chutzpah">Chutzpah</label>
+					<input type="text" name="chutzpah" value=""  /><br />
+					<label for="mech">Mech. Apt.</label>
+					<input type="text" name="mech" value="" /><br />
+					<label for="mutant_power">Mutant Power</label>
+					<input type="text" name="mutant_power" value="" /><br />
+				</div>
+				<div id="attribute_box_right" class="col-md-6">
+					<label for="carrying_capacity">Carrying Capacity</label>
+					<div class="input-group">
+						<input type="text" name="carrying_capacity" value=""  />
+						<span class="input-group-addon">kg</span>
+					</div>
+					<label for="damage_bonus">Damage Bonus</label>
+					<input type="text" name="damage_bonus" value=""   /><br />
+					<label for="macho_bonus">Macho Bonus</label>
+					<input type="text" name="macho_bonus" value=""   /><br />
+					<label for="agility_skill_base">Agility Skill Base</label>
+					<input type="text" name="agility_skill_base" value=""  /><br />
+					<label for="dexterity_skill_base">Dexterity Skill Base</label>
+					<input type="text" name="dexterity_skill_base" value=""  /><br />
+					<label for="moxie_skill_base">Chutzpah Skill Base</label>
+					<input type="text" name="moxie_skill_base" value=""   /><br />
+					<label for="chutzpah_skill_base">Moxie Skill Base</label>
+					<input type="text" name="chutzpah_skill_base" value=""   /><br />
+					<label for="mech_skill_base">Mech Skill Base</label>
+					<input type="text" name="mech_skill_base" value=""   /><br />
+				</div>
+			</div>
+			<div id="weapons" class="col-md-6">
+				<h2>Weapons & Armour</h2>
+				<table>
+				<tr>
+				<th>Weapon</th><th>Skill Number</th><th>Type</th><th>Damage Rating</th><th>Range</th><th>Experimental?</th>
+				</tr>
+				<tr>
+				<td><input type="text" name="weapon[]" value="" /></td><td><input type="text" name="skill_number[]" value=""></td>
+				</tr>
+				</table>
+			</div>
+			<div id="skill_box" class="col-md-12">
+			<h2>Skills</h2>
+			<div>Available points<input type="text" name="skill_points" value="30"  size="2" disabled="disabled" /></div>
+			<div id="skill_box" class="col-md-12">
+				<div id="skill_box_left" class="col-md-4">
+					<label for="agility_skill_base">Agility Skill Base</label>
+					<input type="text" name="agility_skill_base" value=""  size="1" disabled="disabled" /><br />
+					<div id="agility_skills">
+						<label for="agility_skill_1">Agility Skill 1</label>
+						<input type="text" name="agility_skill_1" value=""  size="1" /><br />
+						<label for="agility_skill_2">Agility Skill 2</label>
+						<input type="text" name="agility_skill_2" value=""  size="1" /><br />
+					</div>
+					<label for="dexterity_skill_base">Dexterity Skill Base</label>
+					<input type="text" name="dexterity_skill_base" value=""  size="1" disabled="disabled" /><br />
+				</div>
+				<div id="skill_box_middle" class="col-md-4">
+					<label for="moxie_skill_base">Moxie Skill Base</label>
+					<input type="text" name="moxie_skill_base" value=""  size="1" disabled="disabled" /><br />
+					<label for="chutzpah_skill_base">Chutzpah Skill Base</label>
+					<input type="text" name="chutzpah_skill_base" value=""  size="1" disabled="disabled" /><br />
+				</div>
+				<div id="skill_box_right" class="col-md-4">
+					<label for="mech_skill_base">Mech. Apt.</label>
+					<input type="text" name="mech_skill_base" value=""  size="1" disabled="disabled"  /><br />
+				</div>
+			</div>
+			</div>
+		</form>
+		<script>
+		$(document).ready(function() {
+			var attributes = new Array('strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power');
+			
+			var skillbases = new Array('agility','dexterity','moxie','chutzpah','mech');
+			//load attributes
+			attributes.forEach(function(one_attribute) {
+					jQuery('input[name='+one_attribute+']').val(localStorage.getItem(one_attribute));
+			});
+
+			skillbases.forEach(function(one_skillbase) {
+					jQuery('input[name='+one_skillbase+'_skill_base]').val(localStorage.getItem(one_skillbase+'_skill_base'));
+			});
+
+			
+			jQuery('#generate').click(function(){
+				event.preventDefault();	
+				jQuery('#message_box').html('Random character has been generated!');
+				attributes.forEach(function(one_attribute) {
+					randomAttribute(one_attribute,20);	
+				});
+				//console.log(entry);
+				updateCarryingCapacity();
+				updateBonus();
+				updateSkillBase();
+			});
+		  
+			
+			jQuery('#save').click(function(){
+				event.preventDefault();
+				
+				//console.log(attributes);
+				attributes.forEach(function(one_attribute) {
+					localStorage.setItem(one_attribute, jQuery('input[name='+one_attribute+']').val());
+				});
+				
+				skillbases.forEach(function(one_skillbase) {
+					localStorage.setItem(one_skillbase+'_skill_base', jQuery('input[name='+one_skillbase+'_skill_base]').val());
+				});
+				
+				localStorage.setItem('damage_bonus', jQuery('input[name=strength]').val());
+				localStorage.setItem('macho_bonus', jQuery('input[name=endurance]').val());
+				
+				jQuery('#message_box').html('Saving Character Sheet!');
+			});
+			
+			jQuery('#print').click(function(){
+				event.preventDefault();
+				window.print();
+				jQuery('#message_box').html('Printing Character Sheet!');
+			});
+			
+			function randomAttribute(attribute_name,dice){
+				jQuery('input[name='+attribute_name+']').val( Math.floor((Math.random() * dice) + 1)); 
+			}
+			
+			function updateBonus(){
+				jQuery('input[name=damage_bonus]').val(jQuery('input[name=strength]').val()/4);
+				jQuery('input[name=macho_bonus]').val(jQuery('input[name=endurance]').val()/4);
+			}
+			
+			function updateSkillBase(){
+				
+				skillbases.forEach(function(one_skillbase) {
+					jQuery('input[name='+one_skillbase+'_skill_base]').val(jQuery('input[name='+one_skillbase+']').val()/4);
+				});
+			}
+			
+			function updateCarryingCapacity(){
+				jQuery('input[name=carrying_capacity]').val(jQuery('input[name=strength]').val()*5);
+			}
+			
+		});
+		</script>
+		<style>
+			body{
+				background-color:white;
+				padding:1% 0;
+			}
+			a{
+				color:black;
+			}
+			a:hover,a:visited,a:focus{
+				text-decoration:none;
+			}
+			table{
+				border:0;
+			}
+		</style>
+	</body>
+</html>	
