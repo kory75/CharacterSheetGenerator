@@ -3,7 +3,8 @@
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
 
-	//load all input fields in form ??
+	var service_group_skills_1 = ['Truncheon','Unarmed', 'Interrogation','Intimidation', 'Laser Weap' ,'Security','Surveillance'];
+	//load all input fields in form att once??
 	//jQuery('form input').each(function(){  this.name this.val = localStorage.getItem(this.name) });
 
 	//load attributes
@@ -11,6 +12,7 @@
 			jQuery('input[name='+one_attribute+']').val(localStorage.getItem(one_attribute));
 	});
 
+	//load skills
 	skillbases.forEach(function(one_skillbase) {
 			jQuery('input[name='+one_skillbase+'_skill_base]').val(localStorage.getItem(one_skillbase+'_skill_base'));
 	});
@@ -52,6 +54,15 @@
 		event.preventDefault();
 		window.print();
 		jQuery('#message_box').html('Printing Character Sheet!');
+	});
+	
+	jQuery('#reset').click(function(){
+		event.preventDefault();
+		jQuery('input').val('');
+		jQuery('input[name=skill_points]').val('30');
+		jQuery('input[name=armor_worn]').val('L');
+		jQuery('input[name=armor_ratings]').val('4');
+		jQuery('#message_box').html('Empty Form!');
 	});
 	
 	jQuery('#servic-group-dropdown').click(function(){
