@@ -1,6 +1,10 @@
 (function(){
 	var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
+	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
+
+	//load all input fields in form ??
+	//jQuery('form input').each(function(){  this.name this.val = localStorage.getItem(this.name) });
 
 	//load attributes
 	attributes.forEach(function(one_attribute) {
@@ -21,6 +25,9 @@
 		updateCarryingCapacity();
 		updateBonus();
 		updateSkillBase();
+		randomServiceGroup();
+		randomCharacterName();
+		
 	});
 
 	jQuery('#save').click(function(){
@@ -46,9 +53,31 @@
 		window.print();
 		jQuery('#message_box').html('Printing Character Sheet!');
 	});
+	
+	jQuery('#servic-group-dropdown').click(function(){
+		event.preventDefault();
+	});
+
+	function randomCharacterName(){
+		jQuery('input[name=character_name]').val('Joe-'+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 3).toUpperCase()+'-R-1');
+		jQuery('.color-rank-red').button('toggle') ;
+	}
 
 	function randomAttribute(attribute_name,dice){
 		jQuery('input[name='+attribute_name+']').val( Math.floor((Math.random() * dice) + 1));
+	}
+	
+	function randomServiceGroup(){
+		random_number =  Math.floor((Math.random() * 20) + 1);
+		random_service_group = 7;
+		if(random_number > 2) random_service_group = 1;
+		if(random_number > 4) random_service_group = 0;
+		if(random_number > 8) random_service_group = 6;
+		if(random_number > 11) random_service_group = 3;
+		if(random_number > 14) random_service_group = 5;
+		if(random_number > 16) random_service_group = 2;
+		if(random_number > 18) random_service_group = 4;
+		jQuery('select[name=service_group]').val(service_groups[random_service_group]);
 	}
 
 	function updateBonus(){
