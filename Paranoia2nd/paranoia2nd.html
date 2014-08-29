@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Character Generator 0.1</title>
@@ -12,86 +12,124 @@
 		
 	</head>
 	<body>
-		<h1>P C S</h1>
+		<h1>PARANOIA Character Sheet</h1>
+		<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
 		<form action="" method="GET">
-			<a id="generate" class="glyphicon glyphicon-edit"  href="#">Random</a>
-			<a id="save" class="glyphicon glyphicon-floppy-save" href="#">Save</a>
-			<a id="print" class="glyphicon glyphicon-print" href="#">Print</a>
+			<div class="col-md-6">
+				| <a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a>
+				| <a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a>
+				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
+				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
+			</div>
 			<div id="top-box" class="col-md-12">
 				<div class="col-md-6">
 					<label for="character_name">Character Name</label>
-					<input type="text" name="character_name" value="" /><br />
+					<input type="text" class="form-control" name="character_name" value="" /><br />
+					
 					<div class="btn-group">
-					  <button type="button" class="btn btn-default">(IR)</button>
-					  <button type="button" class="btn btn-default">R</button>
-					  <button type="button" class="btn btn-default">O</button>
-					  <button type="button" class="btn btn-default">Y</button>
-					  <button type="button" class="btn btn-default">G</button>
-					  <button type="button" class="btn btn-default">B</button>
-					  <button type="button" class="btn btn-default">V</button>
-					  <button type="button" class="btn btn-default">(UV)</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-ir" value="ir">(IR)</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-r" value="r">R</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-o" value="o">O</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-y" value="y">Y</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-g" value="g">G</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-b" value="b">B</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-i" value="i">I</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-v" value="v">V</button>
+					  <button type="button" class="btn btn-primary color-rank color-rank-uv" value="uv">(UV)</button>
 					</div>
-				</div>	
+				</div>
 				<div class="col-md-6">	
 					<label for="player_name">Player Name</label>
-					<input type="text" name="player_name" value="" /><br />
-					<div class="btn-group">
-					   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					    	Service Group <span class="caret"></span>
-					   </button>
-						<ul class="dropdown-menu" role="menu">
-						    <li><a href="#">SG1</a></li>
-						    <li><a href="#">SG2</a></li>
-						    <li><a href="#">SG3</a></li>
-						    <li class="divider"></li>
-						    <li><a href="#">Int Sec</a></li>
-						 </ul>
-					</div>
+					<input type="text" class="form-control" name="player_name" value="" /><br />
+					<label for="service_group">Service Group</label>
+					<select name="service_group" class="form-control">
+						    <option title="Housing Preservation Development and Mind Control aka 'HPD&MC' HPD & MC is responsible for the health and welfare of all citizens. They house, clothe, provide medicines and make sure that everyone is a Happy Citizen. Are you Happy? Provide: Medicines and drugs">HPD&MC</option>
+						    <option title="Technical Services aka 'Tech Services' If it's broken (which it isn't), tech services can fix it. All manner of devices and weapons can be brought to them to repair. Happily, things don't need repairing often, do they citizen? Provide: Repairs" value="Tech Services">Tech Services</option>
+						    <option title="Research and Design aka 'R&D', 'The East Wind' Research and design are in charge of creating new, wonderful devices! These marvels of technology explore brave new worlds and carry out heretofore unknown functions! All troubleshooters should be proud to have R&D's experimental prototypes at their side. Provide:Experimental devices">R&D</option>
+						    <option title="Production, Logistics, and Commissary aka 'PLC' Production, Logistics, and Commissary provides needed goods and services. These include foodstuffs (Hot Fun! and Cold Fun!), drinks (Bouncy Bubble Beverage!), and clothing (One Size Fits All uniforms!). They also have all the lasers. Provide: Food! Clothes! Lasers!">PLC</option>
+						    <option title="Central Processing Unit aka 'CPU'
+Central Processing Unit ensures that all other service groups in carry out their tasks in coordination with each other. They are essential to the flawless functioning of Alpha Complex. They provide endless amounts of guiding hierarchy. Most significantly they help note potentially treasonous or promotional behavior. Provide: Records of missions, witnesses of other Troubleshooter's actions.">CPU</option>
+						    <option title="Power Services aka 'Power Services'
+Power services provides power for the entire complex! This difficult work typically involves them standing around large poles drinking Hot Fun for many hours a day. They also are in charge of reqisitioning large vehicles and devices. Power services members tend to be early risers. Provide: Big Devices and Vehicles">Power Services</option>
+							<option title="Armed Services aka 'The Army' Armed Services protects Alpha Complex from invaders from without. The fact that no one has invaded Alpha Complex in its history is testament to their excellent work! These stalwart troops are armed to the teeth and prepared to die for the safety of our complex. Provide: Heavy Weaponry">Armed Services</option>
+						   
+						    <option title="Internal Security aka 'IntSec' Unfortunately, not all citizens of Alpha Complex are Good and Loyal (tm). It has been said that a few might even be corrupt followers of the Dark Computer. But not for long, with internal security around to take care of them. Their treasonous behaviour is Being Watched, even now. Provide: Security for all Citizens. And Termination Vouchers">IntSec</option>
+						
+					</select>
 				</div>	
-				
 			</div>
-			<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
+			
 			<div id="attributes_box" class="col-md-6">
 				<h2>Attributes</h2>
 				<div id="attributes_box_left" class="col-md-6">
-					<label for="strength">Strength</label>
-					<input type="text" name="strength" value=""  /><br />
+					<label for="strength" class="col-md-8 control-label">Strength</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm"  name="strength" value="" min="1" max="20"  />
+					</div>
 					<br /><br /><br />
-					<label for="endurance">Endurance</label>
-					<input type="text" name="endurance" value=""  /><br />
-					<label for="agility">Agility</label>
-					<input type="text" name="agility" value=""  /><br />
-					<label for="dexterity">Dexterity</label>
-					<input type="text" name="dexterity" value=""  /><br />
-					<label for="moxie">Moxie</label>
-					<input type="text" name="moxie" value=""  /><br />
-					<label for="chutzpah">Chutzpah</label>
-					<input type="text" name="chutzpah" value=""  /><br />
-					<label for="mech">Mech. Apt.</label>
-					<input type="text" name="mech" value="" /><br />
-					<label for="mutant_power">Mutant Power</label>
-					<input type="text" name="mutant_power" value="" /><br />
+					<label for="endurance" class="col-md-8 control-label">Endurance</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="endurance" value="" min="1" max="20" />
+					</div>
+					<label for="agility" class="col-md-8 control-label">Agility</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="agility" value="" min="1" max="20" />
+					</div>
+					<label for="dexterity" class="col-md-8 control-label">Dexterity</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="dexterity" value="" min="1" max="20" />
+					</div>
+					<label for="moxie" class="col-md-8 control-label">Moxie</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="moxie" value="" min="1" max="20" />
+					</div>
+					<label for="chutzpah" class="col-md-8 control-label">Chutzpah</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="chutzpah" value="" min="1" max="20" />
+					</div>
+					<label for="mech" class="col-md-8 control-label">Mech. Apt.</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="mech" value="" min="1" max="20" />
+					</div>
+					<label for="mutant_power" class="col-md-8 control-label">Mutant Power</label>
+					<div class="col-sm-4">
+						<input type="number" class="form-control input-sm" name="mutant_power" value="" min="1" max="20" />
+					</div>
 				</div>
 				<div id="attribute_box_right" class="col-md-6">
-					<label for="carrying_capacity">Carrying Capacity</label>
-					<div class="input-group">
-						<input type="text" name="carrying_capacity" value=""  />
+					<label for="carrying_capacity" class="col-md-8 control-label">Carrying Capacity</label>
+					<div class="input-group col-md-4">
+						<input type="text" class="form-control input-sm" name="carrying_capacity" value="" disabled="disabled" />
 						<span class="input-group-addon">kg</span>
 					</div>
-					<label for="damage_bonus">Damage Bonus</label>
-					<input type="text" name="damage_bonus" value=""   /><br />
-					<label for="macho_bonus">Macho Bonus</label>
-					<input type="text" name="macho_bonus" value=""   /><br />
-					<label for="agility_skill_base">Agility Skill Base</label>
-					<input type="text" name="agility_skill_base" value=""  /><br />
-					<label for="dexterity_skill_base">Dexterity Skill Base</label>
-					<input type="text" name="dexterity_skill_base" value=""  /><br />
-					<label for="moxie_skill_base">Chutzpah Skill Base</label>
-					<input type="text" name="moxie_skill_base" value=""   /><br />
-					<label for="chutzpah_skill_base">Moxie Skill Base</label>
-					<input type="text" name="chutzpah_skill_base" value=""   /><br />
-					<label for="mech_skill_base">Mech Skill Base</label>
-					<input type="text" name="mech_skill_base" value=""   /><br />
+					<label for="damage_bonus" class="col-md-8 control-label">Damage Bonus</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="damage_bonus" value=""  disabled="disabled"  />
+					</div>
+					<label for="macho_bonus" class="col-md-8 control-label">Macho Bonus</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="macho_bonus" value=""  disabled="disabled"  />
+					</div>
+					<label for="agility_skill_base" class="col-md-8 control-label">Agility Skill Base</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="agility_skill_base" value=""  disabled="disabled" />
+					</div>
+					<label for="dexterity_skill_base" class="col-md-8 control-label">Dexterity Skill Base</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="dexterity_skill_base" value=""  disabled="disabled" />
+					</div>
+					<label for="chutzpah_skill_base" class="col-md-8 control-label">Moxie Skill Base</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="chutzpah_skill_base" value=""   disabled="disabled" />
+					</div>
+					<label for="moxie_skill_base" class="col-md-8 control-label">Chutzpah Skill Base</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="moxie_skill_base" value=""  disabled="disabled"  />
+					</div>
+					<label for="mech_skill_base" class="col-md-8 control-label">Mech Skill Base</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control input-sm" name="mech_skill_base" value=""  disabled="disabled"  />
+					</div>
 				</div>
 			</div>
 			<div id="weapons" class="col-md-6">
@@ -101,40 +139,134 @@
 				<th>Weapon</th><th>Skill Number</th><th>Type</th><th>Damage Rating</th><th>Range</th><th>Experimental?</th>
 				</tr>
 				<tr>
-				<td><input type="text" name="weapon[]" value="" /></td><td><input type="text" name="skill_number[]" value=""></td>
+				<td><input type="text" class="form-control" name="weapon[]" value="Laser Pistol" disabled="disabled" size="20" /></td><td><input type="text" class="form-control" name="skill_number[]" value="" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="type[]" value="L" disabled="disabled" size="1"  /></td><td><input type="text" class="form-control" name="damage_rating[]" value="8" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="range" value="20" disabled="disabled" size="3" /></td><td><input type="checkbox" class="form-control" name="experimental[]" value="" disabled="disabled"  /></td><td><a id="remove_weapon" href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon[]" value="" /></td><td><input type="text" class="form-control" name="skill_number[]" value=""></td><td><input type="text" class="form-control" name="type[]" value="" /></td><td><input type="text" class="form-control" name="damage_rating[]" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td><input type="checkbox" name="experimental[]" value="" /></td><td><a id="add_weapon" href="#"><span class="glyphicon glyphicon-plus"></span></a></td>
 				</tr>
 				</table>
+				<div id="armor-box" class="col-md-12">
+					<div class="col-md-6">
+						<label for="armor_worn">Armour Worn</label>
+						<input type="text" class="form-control" name="armor_worn" value="L"   />
+					</div>
+					<div class="col-md-6">
+						<label for="armor_ratings">Ratings</label>
+						<input type="text" class="form-control" name="armor_ratings" value="4"   />
+					</div>
+				</div>
 			</div>
 			<div id="skill_box" class="col-md-12">
 			<h2>Skills</h2>
-			<div>Available points<input type="text" name="skill_points" value="30"  size="2" disabled="disabled" /></div>
+			<div>
+				<label for="skill_points" class="col-md-2 control-label">Available points</label>
+				<div class="col-md-1">
+					<input type="text" class="form-control input-sm" name="skill_points" value="30"  size="2" disabled="disabled" />
+				</div>
 			<div id="skill_box" class="col-md-12">
 				<div id="skill_box_left" class="col-md-4">
-					<label for="agility_skill_base">Agility Skill Base</label>
-					<input type="text" name="agility_skill_base" value=""  size="1" disabled="disabled" /><br />
+					<label for="agility_skill_base" class="control-label">Agility Skill Base</label>
+					<input type="text" class="form-control input-sm" name="agility_skill_base" value=""  size="1" disabled="disabled" /><br />
 					<div id="agility_skills">
-						<label for="agility_skill_1">Agility Skill 1</label>
-						<input type="text" name="agility_skill_1" value=""  size="1" /><br />
-						<label for="agility_skill_2">Agility Skill 2</label>
-						<input type="text" name="agility_skill_2" value=""  size="1" /><br />
+						<label for="agility_skill_force_sword">Force Sword</label>
+						<input type="number" class="form-control" name="agility_skill_force_sword" value="" min="0" max="20" /><br />
+						<label for="agility_skill_granade">Grenade</label>
+						<input type="number" class="form-control" name="agility_skill_granade" value=""   min="0" max="20" /><br />
+						<label for="agility_skill_neurowhip">Neurowhip</label>
+						<input type="number" class="form-control" name="agility_skill_neurowhip" value=""   min="0" max="20" /><br />
+						<label for="agility_skill_primitive_melee_weapons">Primitive Melee Weapons </label>
+						<input type="number" class="form-control" name="agility_skill_primitive_melee_weapons" value=""  size="1" /><br />
+						<label for="agility_skill_truncheon">Truncheon</label>
+						<input type="number" class="form-control" name="agility_skill_truncheon" value=""   min="0" max="20" /><br />
+						<label for="agility_skill_unarmed">Unarmed</label>
+						<input type="number" class="form-control" name="agility_skill_unarmed" value=""   min="0" max="20" /><br />
 					</div>
-					<label for="dexterity_skill_base">Dexterity Skill Base</label>
-					<input type="text" name="dexterity_skill_base" value=""  size="1" disabled="disabled" /><br />
+					<div id="agility_skills">
+						<label for="chutzpah_skill_base">Chutzpah Skill Base</label>
+						<input type="text" class="form-control" name="chutzpah_skill_base" value=""  min="0" max="20" disabled="disabled" /><br />
+					</div>
 				</div>
 				<div id="skill_box_middle" class="col-md-4">
 					<label for="moxie_skill_base">Moxie Skill Base</label>
-					<input type="text" name="moxie_skill_base" value=""  size="1" disabled="disabled" /><br />
-					<label for="chutzpah_skill_base">Chutzpah Skill Base</label>
-					<input type="text" name="chutzpah_skill_base" value=""  size="1" disabled="disabled" /><br />
+					<input type="text" class="form-control" name="moxie_skill_base" value=""  size="1" disabled="disabled" /><br />
+					<label for="dexterity_skill_base">Dexterity Skill Base</label>
+					<input type="text" class="form-control" name="dexterity_skill_base" value=""  size="1" disabled="disabled" /><br />
 				</div>
 				<div id="skill_box_right" class="col-md-4">
 					<label for="mech_skill_base">Mech. Apt.</label>
-					<input type="text" name="mech_skill_base" value=""  size="1" disabled="disabled"  /><br />
+					<input type="text" class="form-control" name="mech_skill_base" value=""  size="1" disabled="disabled"  /><br />
 				</div>
 			</div>
+			<h1 class="col-md-12">PARANOIA Character Sheet (Secret)</h1>
+			<div id="secret_box">
+				<div id="mutation" class="col-md-6">
+					<label for="mutation">Mutation</label>
+					<select name="mutation" class="form-control">
+						    <option title="" value="1">Adrenaline Control</option>
+						    <option title="" value="2">Charm</option>
+						    <option title="" value="3">Deep Probe</option>
+						    <option title="" value="4">Electroshock</option>
+						    <option title="" value="5">Empathy</option>
+						    <option title="" value="6">Energy Field</option>
+						    <option title="" value="7">Hypersenses</option>
+						    <option title="" value="8">Levitation</option>
+						    <option title="" value="9">Machine Empathy</option>
+						    <option title="" value="10">Matter Eater</option>
+						    <option title="" value="11">Mechanical Intuition</option>
+							<option title="" value="12">Mental Blast</option>
+							<option title="" value="13">Polymorphism</option>
+							<option title="" value="14">Precognition</option>
+							<option title="" value="15">Pyrokinesis</option>
+							<option title="" value="16">Regeneration</option>
+							<option title="" value="17">Telekinesis</option>
+							<option title="" value="18">Telepathy</option>
+							<option title="" value="19">Teleport</option>
+							<option title="" value="20">X-Ray Vision</option>
+					</select>
+				</div>
+				<div id="secret_sociate" class="col-md-6">
+					<label for="secret_sociate">Secret Sociate</label>
+					<select name="secret_sociate" class="form-control">
+							<option title="" value="1">Anti-Mutant</option>
+						    <option title="" value="2">Computer Phreaks</option>
+						    <option title="" value="3">Communists</option>
+						    <option title="" value="4">Corpore Metal</option>
+						    <option title="" value="5">Death Leopard</option>
+						    <option title="" value="6">FCCCP</option>
+						    <option title="" value="7">Frankenstein Destroyers</option>
+						    <option title="" value="8">Free Enterprise</option>
+						    <option title="" value="9">Humanists</option>
+						    <option title="" value="10">Illuminati</option>
+						    <option title="" value="11">Mystics</option>
+						    <option title="" value="12">Pro Tech</option>
+						    <option title="" value="13">Psion</option>
+						    <option title="" value="14">PURGE</option>
+						    <option title="" value="15">Romantics</option>
+						    <option title="" value="16">Sierra Club</option>
+						    <option title="" value="17">“Other”</option>
+					</select>
+				</div>
+			</div>
+			<div id="equipments" class="col-md-12">
+				<h2>Equipments</h2>
+				<ul>
+					<li>Red Reflect Armor</li>
+					<li>Laser Pistol</li>
+					<li>1 Red Laser Barrel</li>
+					<li>Jumpsuit</li>
+					<li>Utility Belt with Pouches</li>
+					<li>Comm Unit Type I</li>
+					<li>Notebook & Stylus</li>
+					<li><input type="text" name="credit" value="100"  disabled="disabled" /> Plasticreds</li>
+					<li><input type="text" name="equipmnent_quantity[]" value=""  size="3"   />
+						<input type="text" name="equipmnent_name[]" value=""  size="20"   /></li>
+			</div>
+			</div>
+			<div id="notes" class="col-md-12">
+				<h2>Notes</h2>
+				<textarea name="notes" class="form-control"></textarea>
 			</div>
 		</form>
-
 		<!-- load JS file after the DOM loaded to enable progessive rendering -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
