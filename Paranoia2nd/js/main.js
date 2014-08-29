@@ -29,7 +29,8 @@
 		updateSkillBase();
 		randomServiceGroup();
 		randomCharacterName();
-		
+		randomMutation();
+		randomSecretSociate();
 	});
 
 	jQuery('#save').click(function(){
@@ -65,9 +66,12 @@
 		jQuery('#message_box').html('Empty Form!');
 	});
 	
-	jQuery('#servic-group-dropdown').click(function(){
-		event.preventDefault();
+	jQuery('#attributes_box_left div input').change(function(){
+		updateCarryingCapacity();
+		updateBonus();
+		updateSkillBase();
 	});
+	
 
 	function randomCharacterName(){
 		jQuery('input[name=character_name]').val('Joe-'+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 3).toUpperCase()+'-R-1');
@@ -89,6 +93,17 @@
 		if(random_number > 16) random_service_group = 2;
 		if(random_number > 18) random_service_group = 4;
 		jQuery('select[name=service_group]').val(service_groups[random_service_group]);
+	}
+	
+	function randomMutation(){
+		random_number =  Math.floor((Math.random() * 20) + 1);
+		jQuery('select[name=mutation]').val(random_number);
+	}
+	
+	function randomSecretSociate(){
+		// TODO some of the secret sociates has higher chance. There are less  sec. soc. than 20 
+		random_number =  Math.floor((Math.random() * 20) + 1);
+		jQuery('select[name=secret_sociate]').val(random_number);
 	}
 
 	function updateBonus(){
