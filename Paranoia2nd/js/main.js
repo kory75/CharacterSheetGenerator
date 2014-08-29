@@ -4,17 +4,10 @@
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
 
 	var service_group_skills_1 = ['Truncheon','Unarmed', 'Interrogation','Intimidation', 'Laser Weap' ,'Security','Surveillance'];
-	//load all input fields in form att once??
-	//jQuery('form input').each(function(){  this.name this.val = localStorage.getItem(this.name) });
-
-	//load attributes
-	attributes.forEach(function(one_attribute) {
-			jQuery('input[name='+one_attribute+']').val(localStorage.getItem(one_attribute));
-	});
-
-	//load skills
-	skillbases.forEach(function(one_skillbase) {
-			jQuery('input[name='+one_skillbase+'_skill_base]').val(localStorage.getItem(one_skillbase+'_skill_base'));
+	
+	//Load all input
+	jQuery( "input" ).each( function( index, element ){
+		    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
 	});
 
 	jQuery('#generate').click(function(){
@@ -36,17 +29,9 @@
 	jQuery('#save').click(function(){
 		event.preventDefault();
 		
-		//console.log(attributes);
-		attributes.forEach(function(one_attribute) {
-			localStorage.setItem(one_attribute, jQuery('input[name='+one_attribute+']').val());
+		jQuery( "input" ).each( function( index, element ){
+		    localStorage.setItem( $( this ).attr("name"),$( this ).val() );
 		});
-		
-		skillbases.forEach(function(one_skillbase) {
-			localStorage.setItem(one_skillbase+'_skill_base', jQuery('input[name='+one_skillbase+'_skill_base]').val());
-		});
-		
-		localStorage.setItem('damage_bonus', jQuery('input[name=strength]').val());
-		localStorage.setItem('macho_bonus', jQuery('input[name=endurance]').val());
 		
 		jQuery('#message_box').html('Saving Character Sheet!');
 	});
@@ -136,4 +121,13 @@
 		}
 		jQuery('input[name=carrying_capacity]').val( ((carrying_capacity_base)*5)+25 );
 	}
+	
+	function markServiceGroupSkills(){
+		if(jQuery('select[name=service_group]').val() == 'IntSec'){
+			service_group_skills_1.forEach(function(service_group_skill) {
+				//jQuery('input[name='+service_group_skill+'_skill_base]').addClass('specialised');
+			});
+		}
+	}
+	
 })();
