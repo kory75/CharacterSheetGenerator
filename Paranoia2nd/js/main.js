@@ -1,4 +1,8 @@
 (function(){
+	//test init.json
+	console.log(jsonObject.attributes[1].name);
+	
+	
 	var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
@@ -7,6 +11,9 @@
 	
 	//Load all input
 	jQuery( "input" ).each( function( index, element ){
+		    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
+	});
+	jQuery( "select" ).each( function( index, element ){
 		    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
 	});
 
@@ -30,6 +37,10 @@
 		event.preventDefault();
 		
 		jQuery( "input" ).each( function( index, element ){
+		    localStorage.setItem( $( this ).attr("name"),$( this ).val() );
+		});
+		
+		jQuery( "select" ).each( function( index, element ){
 		    localStorage.setItem( $( this ).attr("name"),$( this ).val() );
 		});
 		

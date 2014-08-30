@@ -1,0 +1,84 @@
+var jsonObject = {
+"attributes": [
+		{
+			"name":"strength",
+			"title" : "Strenght",
+			"description" : ""
+		},
+		{
+			"name":"endurance",
+			"title" : "Endurance",
+			"description" : ""
+		},
+		{
+			"name":"agility",
+			"title" : "Agility",
+			"description" : ""
+		},
+		{
+			"name":"dexterity",
+			"title" : "Dexterity",
+			"description" : ""
+		},
+		{
+			"name":"moxie",
+			"title" : "Moxie",
+			"description" : ""
+		},
+		{
+			"name":"chutzpah",
+			"title" : "Chutzpah",
+			"description" : ""
+		},
+		{
+			"name":"mech",
+			"title" : "Mech. Apt.",
+			"description" : ""
+		},
+		{
+			"name":"mutant_power",
+			"title" : "Mutant Power",
+			"description" : ""
+		},
+
+		],
+"skillbases" : [
+		{
+			"name":"agility_skill_base",
+			"title" : "Agility Skill Base",
+			"description" : "",
+			"attribute" : "agility"
+		},
+		{
+			"name":"dexterity_skill_base",
+			"title" : "Dexterity Skill Base",
+			"description" : "",
+			"attribute" : "dexterity"
+		},
+		{
+			"name":"moxie_skill_base",
+			"title" : "Moxie Skill Base",
+			"description" : "",
+			"attribute" : "moxie"
+		},
+		{
+			"name":"chutzpah_skill_base",
+			"title" : "Chutzpah Skill Base",
+			"description" : "",
+			"attribute" : "chutzpah"
+		},
+		{
+			"name":"mech_skill_base",
+			"title" : "Mech Skill Base",
+			"description" : "",
+			"attribute" : "mech"
+		}
+		],
+"bonus" : "1",
+"social_service" : "1",
+"mutation" : "1",
+"social_group" : "1",
+"weapon" : "Laser",
+"armour" : "L", 
+"test" : "1"
+ }   

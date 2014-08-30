@@ -39,7 +39,15 @@ table{
 	color: white;
 }
 
+@page {
+    size: A3;
+    margin-left: -5cm;
+    margin-right: -5cm;
+    
+    }
+
 @media print{
+	
 	body{
 		background: white;
 		color:black;
