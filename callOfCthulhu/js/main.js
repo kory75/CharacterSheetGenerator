@@ -1,5 +1,5 @@
 angular.module('cthulhuApp', [])
-	.controller('ChatSheetController', ['$scope', function($scope) {
+	.controller('CharSheetController', ['$scope', function($scope) {
 // TODO: should be a more delicate way tho...
 	$scope.generic = {};
 	$scope.statistic = {};
