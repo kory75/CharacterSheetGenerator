@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Character Generator 0.1</title>
+
+		<!--load Bootstrap css from CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- load app specific stylesheet -->
+		<link rel="stylesheet" href="css/main.css">
+		
+	</head>
+	<body>
+		<div id="message_box" class="alert alert-info col-md-12 hide" role="alert"></div>
+		<h1>Call Of Cthulhu Character Sheet</h1>
+			<div class="col-md-6">
+				| <a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a>
+				| <a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a>
+				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
+				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
+			</div>
+			<fieldset id="attributes_box" class="col-md-12">
+				<legend>Generic Information</legend>
+				<div class="col-sm-4">
+					<label for="name" class="control-label">Name</label>
+					<input type="text" class="form-control input-sm"  name="name" value="" min="1" max="20"  />
+				</div>
+				<div class="col-sm-4">
+					<label for="occupation" class="control-label">Occupation</label>
+					<input type="text" class="form-control input-sm"  name="occupation" value="" min="1" max="20"  />
+				</div>
+				<div class="col-sm-4">
+					<label for="sex" class="ccontrol-label">Sex</label>
+					<input type="text" class="form-control input-sm"  name="sex" value="" min="1" max="20"  />
+				</div>
+				<div class="col-sm-4">
+					<label for="age" class="control-label">Age</label>
+					<input type="number" class="form-control input-sm"  name="age" value="" min="1" max="3"  />
+				</div>
+				<div class="col-sm-4">
+					<label for="nationality" class="control-label">Nationality</label>
+					<input type="text" class="form-control input-sm"  name="nationality" value="" min="1" max="20"  />
+				</div>
+			</fieldset>
+
+
+		<!-- load JS file after the DOM loaded to enable progessive rendering -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>	
