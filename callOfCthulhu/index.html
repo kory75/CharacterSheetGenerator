@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="cthulhuApp">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Character Generator 0.1</title>
@@ -20,28 +20,33 @@
 				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
 				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
 			</div>
-			<fieldset id="attributes_box" class="col-md-12">
+			<fieldset id="attributes_box" class="col-md-12" ng-controller="GenericController">
 				<legend>Generic Information</legend>
 				<div class="col-sm-4">
 					<label for="name" class="control-label">Name</label>
-					<input type="text" class="form-control input-sm"  name="name" value="" min="1" max="20"  />
+					<input type="text" class="form-control input-sm"  name="name" min="1" max="20" ng-model="generic.name" value="{{generic.name}}" />
 				</div>
 				<div class="col-sm-4">
 					<label for="occupation" class="control-label">Occupation</label>
-					<input type="text" class="form-control input-sm"  name="occupation" value="" min="1" max="20"  />
+					<input type="text" class="form-control input-sm"  name="occupation" min="1" max="20" ng-model="generic.occupation" value="{{generic.occupation}}"  />
 				</div>
 				<div class="col-sm-4">
 					<label for="sex" class="ccontrol-label">Sex</label>
-					<input type="text" class="form-control input-sm"  name="sex" value="" min="1" max="20"  />
+					<input type="text" class="form-control input-sm"  name="sex" min="1" max="20" ng-model="generic.sex" value="{{generic.sex}}"  />
 				</div>
 				<div class="col-sm-4">
 					<label for="age" class="control-label">Age</label>
-					<input type="number" class="form-control input-sm"  name="age" value="" min="1" max="3"  />
+					<input type="text" class="form-control input-sm"  name="age" min="1" max="3" ng-model="generic.age" value="{{generic.age}}" />
 				</div>
 				<div class="col-sm-4">
 					<label for="nationality" class="control-label">Nationality</label>
-					<input type="text" class="form-control input-sm"  name="nationality" value="" min="1" max="20"  />
+					<input type="text" class="form-control input-sm"  name="nationality" min="1" max="20" ng-model="generic.nationality" value="{{generic.nationality}}" />
 				</div>
+				<div class="col-sm-4">
+					<label for="residence" class="control-label">Residence</label>
+					<input type="text" class="form-control input-sm"  name="residence" min="1" max="20" ng-model="generic.residence" value="{{generic.residence}}" />
+				</div>
+				<a ng-click="onDebugger()" class='btn btn-success'>Confirm dataset</a>
 			</fieldset>
 
 
