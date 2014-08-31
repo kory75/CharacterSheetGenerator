@@ -1,84 +1,127 @@
 var jsonObject = {
-"attributes": [
+"attributes": {
+		"zones" : { "1" : "0","4" : "1","7" : "2","11" : "3","15" : "4","18" : "5" },
+		"fields":
+		[
 		{
 			"name":"strength",
-			"title" : "Strenght",
-			"description" : ""
+			"label" : "Strenght",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"endurance",
-			"title" : "Endurance",
-			"description" : ""
+			"label" : "Endurance",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"agility",
-			"title" : "Agility",
-			"description" : ""
+			"label" : "Agility",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"dexterity",
-			"title" : "Dexterity",
-			"description" : ""
+			"label" : "Dexterity",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"moxie",
-			"title" : "Moxie",
-			"description" : ""
+			"label" : "Moxie",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"chutzpah",
-			"title" : "Chutzpah",
-			"description" : ""
+			"label" : "Chutzpah",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"mech",
-			"title" : "Mech. Apt.",
-			"description" : ""
+			"label" : "Mech. Apt.",
+			"description" : "",
+			"dice" : "d20"
 		},
 		{
 			"name":"mutant_power",
-			"title" : "Mutant Power",
-			"description" : ""
+			"label" : "Mutant Power",
+			"description" : "",
+			"dice" : "d20"
 		},
-
-		],
+		]
+		},
 "skillbases" : [
 		{
 			"name":"agility_skill_base",
-			"title" : "Agility Skill Base",
+			"label" : "Agility Skill Base",
 			"description" : "",
-			"attribute" : "agility"
+			"attribute" : "agility",
 		},
 		{
 			"name":"dexterity_skill_base",
-			"title" : "Dexterity Skill Base",
+			"label" : "Dexterity Skill Base",
 			"description" : "",
 			"attribute" : "dexterity"
 		},
 		{
 			"name":"moxie_skill_base",
-			"title" : "Moxie Skill Base",
+			"label" : "Moxie Skill Base",
 			"description" : "",
 			"attribute" : "moxie"
 		},
 		{
 			"name":"chutzpah_skill_base",
-			"title" : "Chutzpah Skill Base",
+			"label" : "Chutzpah Skill Base",
 			"description" : "",
 			"attribute" : "chutzpah"
 		},
 		{
 			"name":"mech_skill_base",
-			"title" : "Mech Skill Base",
+			"label" : "Mech Skill Base",
 			"description" : "",
 			"attribute" : "mech"
 		}
 		],
-"bonus" : "1",
-"social_service" : "1",
+"bonus" : [
+		{
+			"name":"damage_bonus",
+			"label" : "Damage Bonus",
+			"description" : "",
+			"attribute" : "strenght"
+		},
+		{
+			"name":"macho_bonus",
+			"label" : "Macho Bonus",
+			"description" : "",
+			"attribute" : "endurance",	
+		}
+		],
+"bonus_zones" : { "1" : "0","14" : "1","19" : "2" },
+"service_group" : { 
+			"dice" : "d20", 
+			"name" : "service_group",
+			"label" : "Service Group",
+			"options" : [
+				{
+					"label" : "HPD&MC",
+					"description" : "Housing Preservation Development and Mind Control aka 'HPD&MC' HPD & MC is responsible for the health and welfare of all citizens. They house, clothe, provide medicines and make sure that everyone is a Happy Citizen. Are you Happy? Provide: Medicines and drugs"	
+				},
+				{
+					"label" : "Tec Services",
+					"description" : "Technical Services aka 'Tech Services' If it's broken (which it isn't), tech services can fix it. All manner of devices and weapons can be brought to them to repair. Happily, things don't need repairing often, do they citizen? Provide: Repairs"	
+				}
+			] 
+			},
 "mutation" : "1",
 "social_group" : "1",
 "weapon" : "Laser",
 "armour" : "L", 
 "test" : "1"
  }   
+ 
+ 
+ if(jQuery('input[name=strength]').val() > 13) damage_bonus = 1;
+		if(jQuery('input[name=strength]').val() > 18) damage_bonus = 2;

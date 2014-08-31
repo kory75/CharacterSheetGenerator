@@ -1,6 +1,6 @@
 (function(){
 	//test init.json
-	console.log(jsonObject.attributes[1].name);
+	console.log(jsonObject.attributes.fields[1].name);
 	
 	
 	var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
