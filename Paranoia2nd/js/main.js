@@ -9,12 +9,16 @@
 
 	var service_group_skills_1 = ['Truncheon','Unarmed', 'Interrogation','Intimidation', 'Laser Weap' ,'Security','Surveillance'];
 	
-	//Load all input
-	jQuery( "input" ).each( function( index, element ){
-		    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
-	});
-	jQuery( "select" ).each( function( index, element ){
-		    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
+	jQuery('#load').click(function(){
+		event.preventDefault();
+		//Load all input
+		jQuery( "input" ).each( function( index, element ){
+			    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
+		});
+		jQuery( "select" ).each( function( index, element ){
+			    jQuery(this).val(localStorage.getItem($( this ).attr("name")));
+		});
+		jQuery('#message_box').html('Character Sheet Loaded!');
 	});
 
 	jQuery('#generate').click(function(){
@@ -44,13 +48,13 @@
 		    localStorage.setItem( $( this ).attr("name"),$( this ).val() );
 		});
 		
-		jQuery('#message_box').html('Saving Character Sheet!');
+		jQuery('#message_box').html('Character Sheet Saved!');
 	});
 
 	jQuery('#print').click(function(){
 		event.preventDefault();
 		window.print();
-		jQuery('#message_box').html('Printing Character Sheet!');
+		jQuery('#message_box').html('Printing character sheet!');
 	});
 	
 	jQuery('#reset').click(function(){
@@ -59,7 +63,7 @@
 		jQuery('input[name=skill_points]').val('30');
 		jQuery('input[name=armor_worn]').val('L');
 		jQuery('input[name=armor_ratings]').val('4');
-		jQuery('#message_box').html('Empty Form!');
+		jQuery('#message_box').html('Form resetted!');
 	});
 	
 	jQuery('#attributes_box_left div input').change(function(){

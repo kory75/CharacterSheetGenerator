@@ -18,6 +18,7 @@
 		<form action="" method="GET">
 			<div class="col-md-6">
 				| <a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a>
+				| <a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a>
 				| <a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a>
 				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
 				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
@@ -166,96 +167,104 @@ Power services provides power for the entire complex! This difficult work typica
 				</div>
 				<div id="skill_box" class="col-md-12">
 					<div id="skill_box_left" class="col-md-4">
-						<label for="agility_skill_base" class="control-label">Agility Skill Base</label>
-						<input type="text" class="form-control input-sm" name="agility_skill_base" value=""  size="1" disabled="disabled" /><br />
-						
-						<div id="agility_skills">
+						<label for="agility_skill_base" class="control-label" class="col-md-12">Agility Skill Base</label>
+						<div class="col-md-12">
+							<input type="text" class="form-control input-sm" name="agility_skill_base" value=""  size="1" disabled="disabled" /><br />
+						</div>
+						<div id="agility_skills" class="col-md-12">
 							<label for="agility_skill_force_sword" class="col-md-8">Force Sword</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="agility_skill_force_sword" value="" min="0" max="20" title="Melee Combat skills." />
+								<input type="number" class="form-control input-sm" name="agility_skill_force_sword" value="" min="0" max="20" title="Melee Combat skills." />
 							</div>
 							<label for="agility_skill_granade" class="col-md-8">Grenade</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="agility_skill_granade" value="" min="0" max="20" title="Missile Combat skills." />
+								<input type="number" class="form-control input-sm" name="agility_skill_granade" value="" min="0" max="20" title="Missile Combat skills." />
 							</div>
 							<label for="agility_skill_neurowhip" class="col-md-8">Neurowhip</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="agility_skill_neurowhip" value="" min="0" max="20" title="Melee Combat skills." />
+								<input type="number" class="form-control input-sm" name="agility_skill_neurowhip" value="" min="0" max="20" title="Melee Combat skills." />
 							</div>
 							<label for="agility_skill_primitive_melee_weapons" class="col-md-8">Primitive Melee Weapons </label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="agility_skill_primitive_melee_weapons" value=""  size="1" title="Things like knives, swords, clubs..." />
+								<input type="number" class="form-control input-sm" name="agility_skill_primitive_melee_weapons" value=""  size="1" title="Things like knives, swords, clubs..." />
 							</div>
 							<label for="agility_skill_truncheon" class="col-md-8">Truncheon</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="agility_skill_truncheon" value="" min="0" max="20" title="Melee Combat skills." />
+								<input type="number" class="form-control input-sm" name="agility_skill_truncheon" value="" min="0" max="20" title="Melee Combat skills." />
 							</div>
 							<label for="agility_skill_unarmed" class="col-md-8">Unarmed</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="agility_skill_unarmed" value="" min="0" max="20" title="Melee Combat skills." />
+								<input type="number" class="form-control input-sm" name="agility_skill_unarmed" value="" min="0" max="20" title="Melee Combat skills." />
 							</div>
 						</div>
-						<div id="chutzpah_skills">
-						<label for="chutzpah_skill_base">Chutzpah Skill Base</label>
-						<input type="text" class="form-control" name="chutzpah_skill_base" value=""  min="0" max="20" disabled="disabled" /><br />
+						<div id="chutzpah_skills" class="col-md-12">
+						<label for="chutzpah_skill_base" class="col-md-8">Chutzpah Skill Base</label>
+						<div class="col-md-4">
+							<input type="text" class="form-control input-sm" name="chutzpah_skill_base" value=""  min="0" max="20" disabled="disabled" /><br />
+						</div>
 						<div id="chutzpah_skills">
 							<label for="chutzpah_skill_force_sword" class="col-md-8">Bootlicking</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_force_sword" value="" min="0" max="20" title="Ingratiating yourself with your superiors" /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_force_sword" value="" min="0" max="20" title="Ingratiating yourself with your superiors" />
 							</div>
 							<label for="chutzpah_skill_bribery" class="col-md-8">Bribery</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_bribery" value="" min="0" max="20" title="Trading items for services. Use of this skill is Treasonous." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_bribery" value="" min="0" max="20" title="Trading items for services. Use of this skill is Treasonous." />
 							</div>
 							<label for="chutzpah_skill_con" class="col-md-8">Con</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_con" value="" min="0" max="20" title="Persuading someone to let you do something that they probably shouldn’t." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_con" value="" min="0" max="20" title="Persuading someone to let you do something that they probably shouldn’t." />
 							</div>
 							<label for="chutzpah_skill_fast_talk" class="col-md-8">Fast Talk</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_fast_talk" value="" min="0" max="20" title="Like Con, but quicker. Getting past guards at a checkpoint is Fast Talk." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_fast_talk" value="" min="0" max="20" title="Like Con, but quicker. Getting past guards at a checkpoint is Fast Talk." />
 							</div>
 							<label for="chutzpah_skill_forgery" class="col-md-8">Forgery</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_forgery" value="" min="0" max="20" title="Faking forms and signatures. Use of this skill is Treasonous." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_forgery" value="" min="0" max="20" title="Faking forms and signatures. Use of this skill is Treasonous." />
 							</div>
 							<label for="chutzpah_skill_interrogation" class="col-md-8">Interrogation</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_interrogation" value="" min="0" max="20" title="Extracting useful information from Commie scum." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_interrogation" value="" min="0" max="20" title="Extracting useful information from Commie scum." />
 							</div>
 							<label for="chutzpah_skill_intimidation" class="col-md-8">Intimidation</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_intimidation" value="" min="0" max="20" title="Getting cooperation from your inferiors." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_intimidation" value="" min="0" max="20" title="Getting cooperation from your inferiors." />
 							</div>
 							<label for="chutzpah_skill_motivation" class="col-md-8">Motivation</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_motivation" value="" min="0" max="20" title="Getting a few people thinking your idea is a good idea." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_motivation" value="" min="0" max="20" title="Getting a few people thinking your idea is a good idea." />
 							</div>
 							<label for="chutzpah_skill_oratory" class="col-md-8">Oratory</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_oratory" value="" min="0" max="20" title="Speech-giving. Motivation for large groups." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_oratory" value="" min="0" max="20" title="Speech-giving. Motivation for large groups." />
 							</div>
 							<label for="chutzpah_skill_psychescan" class="col-md-8">Psychescan</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_psychescan" value="" min="0" max="20" title="Lie detection when you are talking to someone." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_psychescan" value="" min="0" max="20" title="Lie detection when you are talking to someone." />
 							</div>
 							<label for="chutzpah_skill_superious_logic" class="col-md-8">Spurious Logic</label>
 							<div class="col-md-4">
-								<input type="number" class="form-control" name="chutzpah_skill_superious_logic" value="" min="0" max="20" title="Con & Fast Talk for use against Bots and computers." /><br />
+								<input type="number" class="form-control input-sm" name="chutzpah_skill_superious_logic" value="" min="0" max="20" title="Con & Fast Talk for use against Bots and computers." />
 							</div>
 						</div>
 					</div>
 				</div>
 			<div id="skill_box_middle" class="col-md-4">
-				<label for="dexterity_skill_base">Dexterity Skill Base</label>
-				<input type="text" class="form-control" name="dexterity_skill_base" value=""  size="1" disabled="disabled" /><br />
-				<label for="mech_skill_base">Mech. Apt.</label>
-				<input type="text" class="form-control" name="mech_skill_base" value=""  size="1" disabled="disabled"  /><br />
+				<label for="dexterity_skill_base" class="col-md-8">Dexterity Skill Base</label>
+				<div class="col-md-4">
+					<input type="text" class="form-control input-sm" name="dexterity_skill_base" value=""  size="1" disabled="disabled" /><br />
+				</div>	
+				<label for="mech_skill_base" class="col-md-8">Mech. Apt.</label>
+				<div class="col-md-4">
+				<input type="text" class="form-control input-sm" name="mech_skill_base" value=""  size="1" disabled="disabled"  /><br />
+				</div>
 			</div>
 			<div id="skill_box_right" class="col-md-4">
-				<label for="moxie_skill_base">Moxie Skill Base</label>
-				<input type="text" class="form-control" name="moxie_skill_base" value=""  size="1" disabled="disabled" /><br />
-				
+				<label for="moxie_skill_base" class="col-md-8">Moxie Skill Base</label>
+				<div class="col-md-4">
+					<input type="text" class="form-control input-sm" name="moxie_skill_base" value=""  size="1" disabled="disabled" /><br />
+				</div>	
 			</div>
 		</div>
 			<h1 class="col-md-12">PARANOIA Character Sheet (Secret)</h1>
