@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/main.css">
 		
 	</head>
-	<body>
+	<body ng-controller="ChatSheetController">
 		<div id="message_box" class="alert alert-info col-md-12 hide" role="alert"></div>
 		<h1>Call Of Cthulhu Character Sheet</h1>
 			<div class="col-md-6">
@@ -20,7 +20,7 @@
 				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
 				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
 			</div>
-			<fieldset id="attributes_box" class="col-md-12" ng-controller="GenericController">
+			<fieldset id="attributes_box" class="col-md-12">
 				<legend>Generic Information</legend>
 				<div class="col-sm-4">
 					<label for="name" class="control-label">Name</label>
@@ -46,9 +46,61 @@
 					<label for="residence" class="control-label">Residence</label>
 					<input type="text" class="form-control input-sm"  name="residence" min="1" max="20" ng-model="generic.residence" />
 				</div>
-				<a ng-click="onDebugger()" class='btn btn-success'>Confirm dataset</a>
 			</fieldset>
 
+			<fieldset id="statistic_box" class="col-md-12">
+				<legend>Statistics</legend>
+				<div class="col-sm-2">
+					<label for="str" class="control-label">STR</label>
+					<input type="text" class="form-control input-sm"  name="str" min="1" max="3" ng-model="statistic.str" />
+				</div>
+				<div class="col-sm-2">
+					<label for="dex" class="control-label">DEX</label>
+					<input type="text" class="form-control input-sm"  name="dex" min="1" max="3" ng-model="statistic.dex" />
+				</div>
+				<div class="col-sm-2">
+					<label for="int" class="control-label">INT</label>
+					<input type="text" class="form-control input-sm"  name="int" min="1" max="3" ng-model="statistic.int" />
+				</div>
+				<div class="col-sm-2">
+					<label for="con" class="control-label">CON</label>
+					<input type="text" class="form-control input-sm"  name="con" min="1" max="3" ng-model="statistic.con" />
+				</div>
+				<div class="col-sm-2">
+					<label for="app" class="control-label">APP</label>
+					<input type="text" class="form-control input-sm"  name="app" min="1" max="3" ng-model="statistic.app" />
+				</div>
+				<div class="col-sm-2">
+					<label for="pow" class="control-label">POW</label>
+					<input type="text" class="form-control input-sm"  name="pow" min="1" max="3" ng-model="statistic.pow" />
+				</div>
+				<div class="col-sm-2">
+					<label for="siz" class="control-label">SIZ</label>
+					<input type="text" class="form-control input-sm"  name="siz" min="1" max="3" ng-model="statistic.siz" />
+				</div>
+				<div class="col-sm-2">
+					<label for="san" class="control-label">SAN</label>
+					<input type="text" class="form-control input-sm"  name="san" min="1" max="3" ng-model="statistic.san" />
+				</div>
+				<div class="col-sm-2">
+					<label for="edu" class="control-label">EDU</label>
+					<input type="text" class="form-control input-sm"  name="edu" min="1" max="3" ng-model="statistic.edu" />
+				</div>
+				<div class="col-sm-2">
+					<label for="idea" class="control-label">Idea</label>
+					<input type="text" class="form-control input-sm"  name="idea" min="1" max="3" ng-model="statistic.idea" />
+				</div>
+				<div class="col-sm-2">
+					<label for="luck" class="control-label">Luck</label>
+					<input type="text" class="form-control input-sm"  name="luck" min="1" max="3" ng-model="statistic.luck" />
+				</div>
+				<div class="col-sm-2">
+					<label for="know" class="control-label">Know</label>
+					<input type="text" class="form-control input-sm"  name="know" min="1" max="3" ng-model="statistic.know" />
+				</div>
+			</fieldset>
+
+			<a ng-click="onDebugger()" class='btn btn-success'>Confirm dataset</a>
 
 		<!-- load JS file after the DOM loaded to enable progessive rendering -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
