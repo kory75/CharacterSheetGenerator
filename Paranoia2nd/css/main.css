@@ -39,6 +39,10 @@ table{
 	color: white;
 }
 
+#attributes_box_left label:first-child{
+	margin-bottom: 38px;
+}
+
 @page {
     size: A3;
     margin-left: -5cm;

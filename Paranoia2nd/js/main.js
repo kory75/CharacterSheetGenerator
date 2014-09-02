@@ -2,12 +2,22 @@
 	//test init.json
 	console.log(jsonObject.attributes.fields[1].name);
 	
-	
 	var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
 
 	var service_group_skills_1 = ['Truncheon','Unarmed', 'Interrogation','Intimidation', 'Laser Weap' ,'Security','Surveillance'];
+	
+	function init_sheet(){
+		jsonObject.attributes.fields.forEach(function(one_attribute) {
+			jQuery( "#attributes_box_left" ).append('<label for="'+one_attribute.name+'" class="col-md-8 control-label">'+one_attribute.label+'</label>');
+			jQuery( "#attributes_box_left" ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_attribute.name+'" value="" min="1" max="20"  /></div>');
+			//console.log(one_attribute.label);
+		});
+
+	}
+	
+	init_sheet();
 	
 	jQuery('#load').click(function(){
 		event.preventDefault();
@@ -79,11 +89,11 @@
 	}
 
 	function randomAttribute(attribute_name,dice){
-		jQuery('input[name='+attribute_name+']').val( Math.floor((Math.random() * dice) + 1));
+		jQuery('input[name='+attribute_name+']').val( Dice.roll("d20") );
 	}
 	
 	function randomServiceGroup(){
-		random_number =  Math.floor((Math.random() * 20) + 1);
+		random_number =  Dice.roll("d20");
 		random_service_group = 7;
 		if(random_number > 2) random_service_group = 1;
 		if(random_number > 4) random_service_group = 0;
@@ -96,13 +106,13 @@
 	}
 	
 	function randomMutation(){
-		random_number =  Math.floor((Math.random() * 20) + 1);
+		random_number =  Dice.roll("d20");
 		jQuery('select[name=mutation]').val(random_number);
 	}
 	
 	function randomSecretSociate(){
 		// TODO some of the secret sociates has higher chance. There are less  sec. soc. than 20 
-		random_number =  Math.floor((Math.random() * 20) + 1);
+		random_number =  Dice.roll("d20");
 		jQuery('select[name=secret_sociate]').val(random_number);
 	}
 
