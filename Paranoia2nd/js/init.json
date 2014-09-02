@@ -1,6 +1,6 @@
 var jsonObject = {
 "attributes": {
-		"zones" : { "1" : "0","4" : "1","7" : "2","11" : "3","15" : "4","18" : "5" },
+		"bands" : { "1" : "0","4" : "1","7" : "2","11" : "3","15" : "4","18" : "5" },
 		"fields":
 		[
 		{
@@ -99,7 +99,17 @@ var jsonObject = {
 			"attribute" : "endurance",	
 		}
 		],
-"bonus_zones" : { "1" : "0","14" : "1","19" : "2" },
+"bonus_bands" : { "1" : "0","14" : "1","19" : "2" },
+"carrying_capacity" : {
+		"bands" : { "12" : "25","13" : "30","14" : "35","15" : "40","16" : "45","17" : "50","18" : "55","19" : "60","20" : "65" },
+		"fields":
+		{
+			"name":"carrying_capacity",
+			"label" : "Damage Bonus",
+			"description" : "",
+			"attribute" : "strenght"
+		}
+},
 "service_group" : { 
 			"dice" : "d20", 
 			"name" : "service_group",
