@@ -27,4 +27,8 @@ angular.module('cthulhuApp', [])
 	$scope.onRandom = function () {
 		debugger;
 	};
+
+	$scope.diceRoll = function (inputName, dice) {
+		$('input[name=' + inputName + ']').val(Dice.roll(dice)).trigger('input');
+	};
 }]);
