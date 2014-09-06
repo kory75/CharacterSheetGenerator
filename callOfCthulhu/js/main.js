@@ -1,9 +1,5 @@
-angular.module('cthulhuApp', [])
+(function() {
 
-	.controller('CharSheetController', ['$scope', function($scope) {
-// TODO: should be a more delicate way tho...
-	$scope.generic = {};
-	$scope.statistic = {};
 	var form = [
 		{
 			fieldsetName: 'General Information',
@@ -45,19 +41,19 @@ angular.module('cthulhuApp', [])
 		}
 	];
 
-// console.log actual state of the `generic` model
-// only here for demonstrational purposes
-	$scope.onDebugger = function () {
-		console.log(this.generic);
-		console.log(this.statistic);
-		// debugger;
-	};
+	var app = angular.module('cthulhuApp', []);
 
-	$scope.onRandom = function () {
-		debugger;
-	};
+	app.controller('CharSheetController', ['$scope', function($scope) {
 
-	$scope.diceRoll = function (inputName, dice) {
-		$('input[name=' + inputName + ']').val(Dice.roll(dice)).trigger('input');
-	};
-}]);
+		this.form = form;
+		this.values = {};
+
+		$scope.onDebugger = function () {
+			debugger;
+		};
+
+		$scope.diceRoll = function (inputName, dice) {
+			$('input[name=' + inputName + ']').val(Dice.roll(dice)).trigger('input');
+		};
+	}]);
+})();
