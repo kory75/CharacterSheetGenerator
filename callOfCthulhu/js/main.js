@@ -1,30 +1,59 @@
-// global variable for random values
-// TODO: should be a more delicate way tho...
-randomValues = {
-	name: ['Brogam Moore', 'Arthur R. Sulivan', 'Kyle Lukowsky', 'Benjamin T. Thomson'],
-	age: Math.floor(Math.random()*100),
-	occupation: ['advocat', 'archeologist', 'occultist', 'highschool teacher'],
-	sex: ['male', 'female'],
-	nationality: ['english', 'american', 'german'],
-	redisence: ['Boston, MA', 'Arkham, MA', 'Quochag, MA']
-};
+(function() {
 
-angular.module('cthulhuApp', [])
+	var form = [
+		{
+			fieldsetName: 'General Information',
+			fields: [
+				{
+					name: 'name',
+					type: 'text',
+					label: 'Name',
+					description: '',
+					size: 'medium' //indicates the size of the field
+				},
+				{
+					name: 'occupation',
+					type: 'text',
+					label: 'Occupation',
+					description: '',
+					size: 'medium'
+				},
+			]
+		},
+		{
+			fieldsetName: 'Statistics',
+			fields: [
+				{
+					name: 'str',
+					type: 'number',
+					label: 'STR',
+					description: 'Strength',
+					dice: '3d6'
+				},
+				{
+					name: 'dex',
+					type: 'number',
+					label: 'DEX',
+					description: 'Dexterity',
+					dice: '3d6'
+				},
+			]
+		}
+	];
 
-	.controller('CharSheetController', ['$scope', function($scope) {
-// TODO: should be a more delicate way tho...
-	$scope.generic = {};
-	$scope.statistic = {};
+	var app = angular.module('cthulhuApp', []);
 
-// console.log actual state of the `generic` model
-// only here for demonstrational purposes
-	$scope.onDebugger = function () {
-		console.log(this.generic);
-		console.log(this.statistic);
-		// debugger;
-	};
+	app.controller('CharSheetController', ['$scope', function($scope) {
 
-	$scope.onRandom = function () {
-		debugger;
-	};
-}]);
+		this.form = form;
+		this.values = {};
+
+		$scope.onDebugger = function () {
+			debugger;
+		};
+
+		$scope.diceRoll = function (inputName, dice) {
+			$('input[name=' + inputName + ']').val(Dice.roll(dice)).trigger('input');
+		};
+	}]);
+})();
