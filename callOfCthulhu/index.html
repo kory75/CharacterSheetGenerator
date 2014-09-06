@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/main.css">
 		
 	</head>
-	<body ng-controller="CharSheetController">
+	<body ng-controller="CharSheetController as charsheet">
 		<div id="message_box" class="alert alert-info col-md-12 hide" role="alert"></div>
 		<h1>Call Of Cthulhu Character Sheet</h1>
 			<div class="col-md-6">
@@ -20,95 +20,13 @@
 				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
 				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
 			</div>
-			<fieldset id="attributes_box" class="col-md-12">
-				<legend>Generic Information</legend>
-				<div class="col-sm-4">
-					<label for="name" class="control-label">Name</label>
-					<input type="text" class="form-control input-sm"  name="name" min="1" max="20" ng-model="generic.name" />
-				</div>
-				<div class="col-sm-4">
-					<label for="occupation" class="control-label">Occupation</label>
-					<input type="text" class="form-control input-sm"  name="occupation" min="1" max="20" ng-model="generic.occupation" />
-				</div>
-				<div class="col-sm-4">
-					<label for="sex" class="ccontrol-label">Sex</label>
-					<input type="text" class="form-control input-sm"  name="sex" min="1" max="20" ng-model="generic.sex" />
-				</div>
-				<div class="col-sm-4">
-					<label for="age" class="control-label">Age</label>
-					<input type="text" class="form-control input-sm"  name="age" min="1" max="3" ng-model="generic.age" />
-				</div>
-				<div class="col-sm-4">
-					<label for="nationality" class="control-label">Nationality</label>
-					<input type="text" class="form-control input-sm"  name="nationality" min="1" max="20" ng-model="generic.nationality" />
-				</div>
-				<div class="col-sm-4">
-					<label for="residence" class="control-label">Residence</label>
-					<input type="text" class="form-control input-sm"  name="residence" min="1" max="20" ng-model="generic.residence" />
-				</div>
-			</fieldset>
 
-			<fieldset id="statistic_box" class="col-md-12">
-				<legend>Statistics</legend>
-				<div class="col-sm-2">
-					<label for="str" class="control-label">STR</label>
-					<input type="text" class="form-control input-sm"  name="str" min="1" max="3" ng-model="statistic.str" />
-					<a ng-click="diceRoll('str', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="dex" class="control-label">DEX</label>
-					<input type="text" class="form-control input-sm"  name="dex" min="1" max="3" ng-model="statistic.dex" />
-					<a ng-click="diceRoll('dex', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="int" class="control-label">INT</label>
-					<input type="text" class="form-control input-sm"  name="int" min="1" max="3" ng-model="statistic.int" />
-					<a ng-click="diceRoll('int', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="con" class="control-label">CON</label>
-					<input type="text" class="form-control input-sm"  name="con" min="1" max="3" ng-model="statistic.con" />
-					<a ng-click="diceRoll('con', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="app" class="control-label">APP</label>
-					<input type="text" class="form-control input-sm"  name="app" min="1" max="3" ng-model="statistic.app" />
-					<a ng-click="diceRoll('app', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="pow" class="control-label">POW</label>
-					<input type="text" class="form-control input-sm"  name="pow" min="1" max="3" ng-model="statistic.pow" />
-					<a ng-click="diceRoll('pow', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="siz" class="control-label">SIZ</label>
-					<input type="text" class="form-control input-sm"  name="siz" min="1" max="3" ng-model="statistic.siz" />
-					<a ng-click="diceRoll('siz', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="san" class="control-label">SAN</label>
-					<input type="text" class="form-control input-sm"  name="san" min="1" max="3" ng-model="statistic.san" />
-					<a ng-click="diceRoll('san', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="edu" class="control-label">EDU</label>
-					<input type="text" class="form-control input-sm"  name="edu" min="1" max="3" ng-model="statistic.edu" />
-					<a ng-click="diceRoll('edu', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="idea" class="control-label">Idea</label>
-					<input type="text" class="form-control input-sm"  name="idea" min="1" max="3" ng-model="statistic.idea" />
-					<a ng-click="diceRoll('idea', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="luck" class="control-label">Luck</label>
-					<input type="text" class="form-control input-sm"  name="luck" min="1" max="3" ng-model="statistic.luck" />
-					<a ng-click="diceRoll('luck', '3d6')" class="btn btn-primary">roll</a>
-				</div>
-				<div class="col-sm-2">
-					<label for="know" class="control-label">Know</label>
-					<input type="text" class="form-control input-sm"  name="know" min="1" max="3" ng-model="statistic.know" />
-					<a ng-click="diceRoll('know', '3d6')" class="btn btn-primary">roll</a>
+			<fieldset class="col-md-12" ng-repeat="section in charsheet.form">
+				<legend>{{section.fieldsetName}}</legend>
+				<div class="col-sm-4" ng-class="(field.size == 'medium') ? 'col-sm-4' : 'col-sm-2'" ng-repeat="field in section.fields">
+					<label for="{{field.name}}" class="control-label">{{field.label}}</label>
+					<input type="{{field.type}}" class="form-control input-sm"  name="{{field.name}}" ng-model="field.model" />
+					<a ng-show="field.dice" ng-click="diceRoll(field.name, field.dice)" class="btn btn-primary">roll</a>
 				</div>
 			</fieldset>
 
@@ -121,4 +39,4 @@
 		<script src="../singleton/dice.js"></script>
 		<script src="js/main.js"></script>
 	</body>
-</html>	
+</html>
