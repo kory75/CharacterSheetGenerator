@@ -6,17 +6,16 @@
 
 		<!--load Bootstrap css from CDN -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="print" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<!-- load app specific stylesheet -->
 		<link rel="stylesheet" href="css/main.css">
 		
 	</head>
 	<body>
-		<h1>PARANOIA Character Sheet</h1>
+		<h1>Paranoia Character Sheet</h1>
 		<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
 		<form action="" method="GET">
-			<div class="col-md-6">
+			<div class="col-md-6" id="menu-bar">
 				| <a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a>
 				| <a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a>
 				| <a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a>
@@ -29,6 +28,7 @@
 					<label for="character_name">Character Name</label>
 					<input type="text" class="form-control" name="character_name" value="" /><br />
 					
+					<label for="">Color Rank</label><br/>
 					<div class="btn-group">
 					  <button type="button" class="btn btn-primary color-rank color-rank-ir" value="ir">(IR)</button>
 					  <button type="button" class="btn btn-primary color-rank color-rank-r" value="r">R</button>
@@ -67,40 +67,8 @@ Power services provides power for the entire complex! This difficult work typica
 				<div id="attributes_box_left" class="col-md-6">
 					<!-- auto generated -->
 				</div>
-				<div id="attribute_box_right" class="col-md-6">
-					<label for="carrying_capacity" class="col-md-8 control-label">Carrying Capacity</label>
-					<div class="input-group col-md-4">
-						<input type="text" class="form-control input-sm" name="carrying_capacity" value="" disabled="disabled" />
-						<span class="input-group-addon">kg</span>
-					</div>
-					<label for="damage_bonus" class="col-md-8 control-label">Damage Bonus</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="damage_bonus" value=""  disabled="disabled"  />
-					</div>
-					<label for="macho_bonus" class="col-md-8 control-label">Macho Bonus</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="macho_bonus" value=""  disabled="disabled"  />
-					</div>
-					<label for="agility_skill_base" class="col-md-8 control-label">Agility Skill Base</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="agility_skill_base" value=""  disabled="disabled" />
-					</div>
-					<label for="dexterity_skill_base" class="col-md-8 control-label">Dexterity Skill Base</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="dexterity_skill_base" value=""  disabled="disabled" />
-					</div>
-					<label for="chutzpah_skill_base" class="col-md-8 control-label">Moxie Skill Base</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="chutzpah_skill_base" value=""   disabled="disabled" />
-					</div>
-					<label for="moxie_skill_base" class="col-md-8 control-label">Chutzpah Skill Base</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="moxie_skill_base" value=""  disabled="disabled"  />
-					</div>
-					<label for="mech_skill_base" class="col-md-8 control-label">Mech Skill Base</label>
-					<div class="col-md-4">
-						<input type="text" class="form-control input-sm" name="mech_skill_base" value=""  disabled="disabled"  />
-					</div>
+				<div id="attributes_box_right" class="col-md-6">
+					<!-- auto generated -->
 				</div>
 			</div>
 			<div id="weapons" class="col-md-6">
@@ -129,7 +97,7 @@ Power services provides power for the entire complex! This difficult work typica
 			</div>
 			<div id="skill_box" class="col-md-12">
 			<h2>Skills</h2>
-			<div>
+			<div id="skills-box">
 				<label for="skill_points" class="col-md-2 control-label">Available points</label>
 				<div class="col-md-1">
 					<input type="text" class="form-control input-sm" name="skill_points" value="30"  size="2" disabled="disabled" />
@@ -236,7 +204,8 @@ Power services provides power for the entire complex! This difficult work typica
 				</div>	
 			</div>
 		</div>
-			<h1 class="col-md-12">PARANOIA Character Sheet (Secret)</h1>
+		</div>
+			<h1 class="col-md-12 secret-page">PARANOIA Character Sheet (Secret)</h1>
 			<div id="secret_box">
 				<div id="mutation" class="col-md-6">
 					<label for="mutation">Mutation</label>

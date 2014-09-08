@@ -9,12 +9,23 @@
 	var service_group_skills_1 = ['Truncheon','Unarmed', 'Interrogation','Intimidation', 'Laser Weap' ,'Security','Surveillance'];
 	
 	function init_sheet(){
-		jsonObject.attributes.fields.forEach(function(one_attribute) {
-			jQuery( "#attributes_box_left" ).append('<label for="'+one_attribute.name+'" class="col-md-8 control-label">'+one_attribute.label+'</label>');
-			jQuery( "#attributes_box_left" ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_attribute.name+'" value="" min="1" max="20"  /></div>');
+		jsonObject.attributes.fields.forEach(function(one_field) {
+			jQuery( "#attributes_box_left" ).append('<label for="'+one_field.name+'" class="col-md-7 control-label">'+one_field.label+'</label>');
+			jQuery( "#attributes_box_left" ).append('<div class="input-group col-md-4"><input type="number" class="form-control input-sm"  name="'+one_field.name+'" value="" min="1" max="20" /><span class="glyphicon glyphicon-refresh input-group-addon roll_one_attribute"></span></div>');
 			//console.log(one_attribute.label);
 		});
-
+		jsonObject.carrying_capacity.fields.forEach(function(one_field) { 
+			jQuery( "#attributes_box_right" ).append('<label for="'+one_field.name+'" class="col-md-8 control-label">'+one_field.label+'</label>');
+			jQuery( "#attributes_box_right" ).append('<div class="input-group col-md-4"><input type="number" class="form-control input-sm"  name="'+one_field.name+'" value="" min="25" max="65" disabled="disabled" /><span class="input-group-addon">'+one_field.addon+'</span></div>');
+		});
+		jsonObject.bonus.fields.forEach(function(one_field) { 
+			jQuery( "#attributes_box_right" ).append('<label for="'+one_field.name+'" class="col-md-8 control-label">'+one_field.label+'</label>');
+			jQuery( "#attributes_box_right" ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_field.name+'" value="" min="25" max="65" disabled="disabled" /></div>');
+		});
+		jsonObject.skillbases.fields.forEach(function(one_field) { 
+			jQuery( "#attributes_box_right" ).append('<label for="'+one_field.name+'" class="col-md-8 control-label">'+one_field.label+'</label>');
+			jQuery( "#attributes_box_right" ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_field.name+'" value="" min="25" max="65" disabled="disabled" /></div>');
+		});
 	}
 	
 	init_sheet();
@@ -34,8 +45,8 @@
 	jQuery('#generate').click(function(){
 		event.preventDefault();
 		jQuery('#message_box').html('Random character has been generated!');
-		attributes.forEach(function(one_attribute) {
-			randomAttribute(one_attribute,20);
+		jsonObject.attributes.fields.forEach(function(one_attribute) {
+			randomAttribute(one_attribute.name,one_attribute.dice);
 		});
 		//console.log(entry);
 		updateCarryingCapacity();
@@ -45,6 +56,15 @@
 		randomCharacterName();
 		randomMutation();
 		randomSecretSociate();
+	});
+	
+	jQuery('.roll_one_attribute').click(function(){
+		event.preventDefault();
+		jQuery('#message_box').html('Rolls d20!');
+		randomAttribute(jQuery(this).siblings('input').attr('name'),"d20");
+		updateCarryingCapacity();
+		updateBonus();
+		updateSkillBase();
 	});
 
 	jQuery('#save').click(function(){
@@ -89,7 +109,7 @@
 	}
 
 	function randomAttribute(attribute_name,dice){
-		jQuery('input[name='+attribute_name+']').val( Dice.roll("d20") );
+		jQuery('input[name='+attribute_name+']').val( Dice.roll(dice) );
 	}
 	
 	function randomServiceGroup(){

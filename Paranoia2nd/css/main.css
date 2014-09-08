@@ -1,6 +1,6 @@
 body{
 	background-color:white;
-	padding:1% 0;
+	padding:0;
 }
 a{
 	color:black;
@@ -43,6 +43,21 @@ table{
 	margin-bottom: 38px;
 }
 
+#attributes_box_left input[name=strength]{
+	margin-bottom: 38px;
+}
+
+.roll_one_attribute{
+	cursor: pointer;
+}
+
+h1{
+	background-color: black;
+	color: #eee;
+	padding: 1% 2%;
+	margin: 0;
+}
+
 @page {
     size: A3;
     margin-left: -5cm;
@@ -55,5 +70,35 @@ table{
 	body{
 		background: white;
 		color:black;
+		padding: 2% 5cm;
+	}
+	
+	h1{
+		background-color: black;
+		color: #eee;
+		padding: 1% 2%;
+		margin: 0;
+	}
+	h1.secret-page {
+		page-break-before: always;
+	}
+	#skills-box{
+		page-break-after: always;
+	}
+	
+	.roll_one_attribute{
+		display: none;
+	}
+	
+	#message_box{
+		display: none;
+	}
+	#menu-bar{
+		display: none;
+	}
+	input,select{
+		border: none;
+		border-bottom: 1px solid black;
+		border-radius: 0;
 	}
 }
