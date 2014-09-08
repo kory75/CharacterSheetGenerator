@@ -2,26 +2,52 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Character Generator (Alpha)</title>
+		<title>Ultimate Character Sheet Generator</title>
+
+		<!--load Bootstrap css from CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="print" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- load app specific stylesheet -->
+		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<h1>List Of Character Sheets</h1>
-		<p>You can find information about the available character sheets</p>
-		<ul>
-			<li>
-				<div>Paranoia 2nd Edition Character Sheet generator</div>
-				<div>Install: None</div>
-				<div>Usage: Click the <a href="./Paranoia2nd/paranoia2nd.html">paranoia2nd.html</a> file to start.</div>
-				<div>Version: 0.1</div>
-				<div>Features: Character Generator, Save last values, Autoload last saved values, Printing.</div>
+		<h1 class="col-md-12">Ultimate Character Sheet Generator</h1>
+		<p class="col-md-12">You can find information about the available character sheets</p>
+		<ul class="col-md-12">
+			<li class="col-md-3">
+				<a href="./callOfCthulhu/index.html"><img src="img/placeholder.jpg" class="col-md-6" /></a>
+				<div class="col-md-6">
+					<div><a href="./callOfCthulhu/index.html">Call of Cthulhu</a></div>
+					<div><span>Version:</span> 0.1</div>
+					<div><span>Status:</span> Alpha</div>
+					<div><span>Features:</span> Character Generator, Save last values, Autoload last saved values, Printing.</div>
+				</div>
 			</li>
-			<li>
-				<div>Call of Cthulhu Character Sheet generator</div>
-				<div>Install: None</div>
-				<div>Usage: Click the <a href="./callOfCthulhu/index.html">index.html</a> file to start.</div>
-				<div>Version: 0.1</div>
-				<div>Features: Character Generator, Save last values, Autoload last saved values, Printing.</div>
+			<li class="col-md-3">
+				 <a href="./Paranoia2nd/paranoia2nd.html"><img src="img/placeholder.jpg" class="col-md-6" /></a>
+				<div class="col-md-6">
+					<div><a href="./Paranoia2nd/paranoia2nd.html">Paranoia 2nd Edition</a></div>
+					<div><span>Version:</span> 0.1</div>
+					<div><span>Status:</span> Alpha</div>
+					<div><span>Features:</span> Character Generator, Save last values, Autoload last saved values, Printing.</div>
+				</div>
+				
 			</li>
+			<li class="col-md-3">
+				 <a href=""><img src="img/placeholder.jpg" class="col-md-6" /></a>
+				<div class="col-md-6">
+					<div><a href="">Warhammer Fantasy</a></div>
+					<div><span>Version:</span> 0.1</div>
+					<div><span>Status:</span> Alpha</div>
+					<div><span>Features:</span> None avaliable</div>
+				</div>
+				
+			</li>
+			
 		</ul>
+		<!-- load JS file after the DOM loaded to enable progessive rendering -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
 </html>	
