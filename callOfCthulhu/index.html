@@ -12,17 +12,20 @@
 		
 	</head>
 	<body ng-controller="CharSheetController as charsheet">
-		<div id="message_box" class="alert alert-info col-md-12 hide" role="alert"></div>
-		<h1>Call Of Cthulhu Character Sheet</h1>
-			<div class="col-md-6">
-				| <a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a>
-				| <a id="generate" ng-click="onRandom()" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a>
-				| <a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a>
-				| <a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a>
-				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
-				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav" id="menu-bar">
+					<li><a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a></li>
+					<li><a id="generate" ng-click="onRandom()" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a></li>
+					<li><a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+					<li><a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a></li>
+					<li><a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a></li>
+					<li><a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a></li>
+				</ul>
 			</div>
-
+		</nav>
+		<h1>Call Of Cthulhu Character Sheet</h1>
+		<div id="message_box" class="alert alert-info col-md-12 hide" role="alert"></div>
 			<fieldset class="col-md-12" ng-repeat="section in charsheet.form">
 				<legend>{{section.fieldsetName}}</legend>
 				<div class="col-sm-4" ng-class="(field.size == 'medium') ? 'col-sm-4' : 'col-sm-2'" ng-repeat="field in section.fields">

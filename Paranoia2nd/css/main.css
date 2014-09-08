@@ -57,6 +57,9 @@ h1{
 	padding: 1% 2%;
 	margin: 0;
 }
+.navbar-default{
+	margin-bottom: 0;
+}
 
 @page {
     size: A3;
@@ -100,5 +103,13 @@ h1{
 		border: none;
 		border-bottom: 1px solid black;
 		border-radius: 0;
+	}
+	#menu-bar a{
+		border-right: 1px solid black;
+		padding: 5px 15px;
+		color: #eee;
+	}
+	#menu-bar a:first-child{
+		border-left: 1px solid black;
 	}
 }

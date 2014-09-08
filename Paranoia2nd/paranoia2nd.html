@@ -12,17 +12,22 @@
 		
 	</head>
 	<body>
+		
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav" id="menu-bar">
+					<li><a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a></li>
+					<li><a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a></li>
+					<li><a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+					<li><a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a></li>
+					<li><a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a></li>
+					<li><a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a></li>
+				</ul>
+			</div>
+		</nav>
 		<h1>Paranoia Character Sheet</h1>
 		<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
 		<form action="" method="GET">
-			<div class="col-md-6" id="menu-bar">
-				| <a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a>
-				| <a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a>
-				| <a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a>
-				| <a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a>
-				| <a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
-				| <a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a> |
-			</div>
 			<div id="top-box" class="col-md-12">
 				<div class="col-md-6">
 					<label for="character_name">Character Name</label>
