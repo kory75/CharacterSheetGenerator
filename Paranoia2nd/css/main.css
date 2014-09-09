@@ -1,6 +1,23 @@
 body {
   background-color: white;
-  padding: 0; }
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 14px; }
+
+h1 {
+  background-color: #aaa;
+  color: black;
+  padding: 1% 2%;
+  margin: 0;
+  text-align: center;
+  border: 2px solid black; }
+
+h2 {
+  background-color: black;
+  color: white;
+  padding: 1% 2%;
+  text-align: center;
+  margin-left: 0; }
 
 a {
   color: black; }
@@ -10,6 +27,18 @@ a:hover, a:visited, a:focus {
 
 table {
   border: 0; }
+
+.character-sheet {
+  border: 2px solid black;
+  padding: 0;
+  margin: 1% 1%;
+  width: 98%; }
+
+#attributes_box, #weapons, #skill_box {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0; }
 
 .color-rank-ir {
   color: black; }
@@ -44,12 +73,6 @@ table {
   margin-bottom: 38px; }
 #attributes_box_left .roll_one_attribute {
   cursor: pointer; }
-
-h1 {
-  background-color: black;
-  color: #eee;
-  padding: 1% 2%;
-  margin: 0; }
 
 .navbar-default {
   margin-bottom: 0; }
