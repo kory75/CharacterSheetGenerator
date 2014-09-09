@@ -29,6 +29,18 @@
 		jsonObject.service_group.options.forEach(function(one_group) { 
 			jQuery( "select[name=service_group]" ).append(' <option title="'+one_group.description+' '+one_group.provide+'">'+one_group.label+'</option>');
 		});
+		
+		
+		jsonObject.skillbases.fields.forEach(function(one_skillbase) {
+		
+			jsonObject.skills.forEach(function(one_skill) {
+		
+				if (one_skillbase.name == one_skill.skillbase) {
+					jQuery( "#"+one_skillbase.skills ).append('<label for="'+one_skill.name+'" class="col-md-8 control-label">'+one_skill.label+'</label>');
+					jQuery( "#"+one_skillbase.skills ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_skillbase.name+'" value="" title="'+one_skillbase.description+'" min="1" max="20" /></div>');
+				}
+			});
+		});
 	}
 	
 	init_sheet();

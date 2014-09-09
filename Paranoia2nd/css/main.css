@@ -40,6 +40,15 @@ table {
   margin-left: 0;
   margin-right: 0; }
 
+.skill_holder {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding-top: 10px; }
+
+.skill_head {
+  border-right: 1px solid black;
+  padding: 10px 0; }
+
 .color-rank-ir {
   color: black; }
 

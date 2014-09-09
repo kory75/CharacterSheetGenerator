@@ -63,30 +63,35 @@ var jsonObject = {
 			"label" : "Agility Skill Base",
 			"description" : "",
 			"attribute" : "agility",
+			"skills" : "agility_skills"
 		},
 		{
 			"name":"dexterity_skill_base",
 			"label" : "Dexterity Skill Base",
 			"description" : "",
-			"attribute" : "dexterity"
+			"attribute" : "dexterity",
+			"skills" : "dexterity_skills"
 		},
 		{
 			"name":"moxie_skill_base",
 			"label" : "Moxie Skill Base",
 			"description" : "",
-			"attribute" : "moxie"
+			"attribute" : "moxie",
+			"skills" : "moxie_skills"
 		},
 		{
 			"name":"chutzpah_skill_base",
 			"label" : "Chutzpah Skill Base",
 			"description" : "",
-			"attribute" : "chutzpah"
+			"attribute" : "chutzpah",
+			"skills" : "chutzpah_skills"
 		},
 		{
 			"name":"mech_skill_base",
 			"label" : "Mech Skill Base",
 			"description" : "",
-			"attribute" : "mech"
+			"attribute" : "mech",
+			"skills" : "mech_skills"
 		}
 		]
 		},
