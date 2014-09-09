@@ -360,6 +360,130 @@ var jsonObject = {
 				"description" : "",
 				"skillbase" : "moxie_skill_base",
 			}
-		]
+		],
+"avaliable_equipment" : {
+			"starting_money" : "100",
+			"items" : [
+				{
+					"cost" : "1",
+					"name" : "Bag of Cruncheetym Algae Chips",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "3",
+					"name" : "Boot Polish",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Bottle of Bouncy Bubble Beverage",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Bottle of Super Shine Mouthwash",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "1",
+					"name" : "Bucket",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "50",
+					"name" : "Bullhorn",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "2",
+					"name" : "Cold Fun in a self-sealing puck",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "First Aid Kit",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "10",
+					"name" : "Flashlight",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "50",
+					"name" : "Gas Mask",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "2",
+					"name" : "Happiness Energy Bar",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "100",
+					"name" : "Hottorch",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Official Teela-O Picture Mirror",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "Personal Hygiene Kit",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "50",
+					"name" : "Personalized Jumpsuit",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "12",
+					"name" : "Pillow",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "1",
+					"name" : "Plasticord (1 credit per meter)",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "15",
+					"name" : "Poncho",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "Smoke Alarm",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "SuperGum",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "SuperGum Solvent",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "Thermos",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "8",
+					"name" : "Troubleshooting and You! Pamphlet",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Velcro Strip (5 creds per meter)",
+					"clerence" : "red"
+				}
+			]
+		}
  } 
- 

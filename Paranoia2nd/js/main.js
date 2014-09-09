@@ -1,7 +1,5 @@
 (function(){
-	//test init.json
-	console.log(jsonObject.attributes.fields[1].name);
-	
+
 	var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
