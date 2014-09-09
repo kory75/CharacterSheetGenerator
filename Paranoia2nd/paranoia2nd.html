@@ -25,13 +25,17 @@
 				</ul>
 			</div>
 		</nav>
-		<h1>Paranoia Character Sheet</h1>
 		<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
 		<form action="" method="GET">
+		<div class="character-sheet page-1 col-md-12">
+			<h1>Paranoia Character Sheet</h1>
 			<div id="top-box" class="col-md-12">
 				<div class="col-md-6">
 					<label for="character_name">Character Name</label>
-					<input type="text" class="form-control" name="character_name" value="" /><br />
+					<div class="input-group">
+						<input type="text" class="form-control" name="character_name" value="" />
+						<span class="glyphicon glyphicon-refresh input-group-addon roll_one_attribute"></span>
+					</div><br />
 					
 					<label for="">Color Rank</label><br/>
 					<div class="btn-group">
@@ -50,23 +54,14 @@
 					<label for="player_name">Player Name</label>
 					<input type="text" class="form-control" name="player_name" value="" /><br />
 					<label for="service_group">Service Group</label>
-					<select name="service_group" class="form-control">
-						    <option title="Housing Preservation Development and Mind Control aka 'HPD&MC' HPD & MC is responsible for the health and welfare of all citizens. They house, clothe, provide medicines and make sure that everyone is a Happy Citizen. Are you Happy? Provide: Medicines and drugs">HPD&MC</option>
-						    <option title="Technical Services aka 'Tech Services' If it's broken (which it isn't), tech services can fix it. All manner of devices and weapons can be brought to them to repair. Happily, things don't need repairing often, do they citizen? Provide: Repairs" value="Tech Services">Tech Services</option>
-						    <option title="Research and Design aka 'R&D', 'The East Wind' Research and design are in charge of creating new, wonderful devices! These marvels of technology explore brave new worlds and carry out heretofore unknown functions! All troubleshooters should be proud to have R&D's experimental prototypes at their side. Provide:Experimental devices">R&D</option>
-						    <option title="Production, Logistics, and Commissary aka 'PLC' Production, Logistics, and Commissary provides needed goods and services. These include foodstuffs (Hot Fun! and Cold Fun!), drinks (Bouncy Bubble Beverage!), and clothing (One Size Fits All uniforms!). They also have all the lasers. Provide: Food! Clothes! Lasers!">PLC</option>
-						    <option title="Central Processing Unit aka 'CPU'
-Central Processing Unit ensures that all other service groups in carry out their tasks in coordination with each other. They are essential to the flawless functioning of Alpha Complex. They provide endless amounts of guiding hierarchy. Most significantly they help note potentially treasonous or promotional behavior. Provide: Records of missions, witnesses of other Troubleshooter's actions.">CPU</option>
-						    <option title="Power Services aka 'Power Services'
-Power services provides power for the entire complex! This difficult work typically involves them standing around large poles drinking Hot Fun for many hours a day. They also are in charge of reqisitioning large vehicles and devices. Power services members tend to be early risers. Provide: Big Devices and Vehicles">Power Services</option>
-							<option title="Armed Services aka 'The Army' Armed Services protects Alpha Complex from invaders from without. The fact that no one has invaded Alpha Complex in its history is testament to their excellent work! These stalwart troops are armed to the teeth and prepared to die for the safety of our complex. Provide: Heavy Weaponry">Armed Services</option>
-						   
-						    <option title="Internal Security aka 'IntSec' Unfortunately, not all citizens of Alpha Complex are Good and Loyal (tm). It has been said that a few might even be corrupt followers of the Dark Computer. But not for long, with internal security around to take care of them. Their treasonous behaviour is Being Watched, even now. Provide: Security for all Citizens. And Termination Vouchers">IntSec</option>
-						
-					</select>
+					<div class="input-group">
+						<select name="service_group" class="form-control">
+							<!-- auto generated -->
+						</select>
+						<span class="glyphicon glyphicon-refresh input-group-addon roll_one_attribute"></span>
+					</div>
 				</div>	
 			</div>
-			
 			<div id="attributes_box" class="col-md-6">
 				<h2>Attributes</h2>
 				<div id="attributes_box_left" class="col-md-6">
@@ -185,7 +180,7 @@ Power services provides power for the entire complex! This difficult work typica
 							<div class="col-md-4">
 								<input type="number" class="form-control input-sm" name="chutzpah_skill_psychescan" value="" min="0" max="20" title="Lie detection when you are talking to someone." />
 							</div>
-							<label for="chutzpah_skill_superious_logic" class="col-md-8">Spurious Logic</label>
+							<label for="chutzpah_skill_superious_logic" class="col-md-8">Suprious Logic</label>
 							<div class="col-md-4">
 								<input type="number" class="form-control input-sm" name="chutzpah_skill_superious_logic" value="" min="0" max="20" title="Con & Fast Talk for use against Bots and computers." />
 							</div>
@@ -210,9 +205,12 @@ Power services provides power for the entire complex! This difficult work typica
 			</div>
 		</div>
 		</div>
+		</div>
+		</div>
 		<div class="page-break"></div>
-		<h1 class="col-md-12 secret-page">PARANOIA Character Sheet (Secret)</h1>
-		<div id="secret_box">
+		<div class="character-sheet page-2 col-md-12">
+			<h1 class="col-md-12 secret-page">Paranoia Character Sheet (Secret)</h1>
+			<div id="secret_box">
 				<div id="mutation" class="col-md-6">
 					<label for="mutation">Mutation</label>
 					<select name="mutation" class="form-control">
@@ -274,12 +272,13 @@ Power services provides power for the entire complex! This difficult work typica
 					<li><input type="text" name="credit" value="100"  disabled="disabled" /> Plasticreds</li>
 					<li><input type="text" name="equipmnent_quantity[]" value=""  size="3"   />
 						<input type="text" name="equipmnent_name[]" value=""  size="20"   /></li>
-			</div>
+				</ul>
 			</div>
 			<div id="notes" class="col-md-12">
 				<h2>Notes</h2>
 				<textarea name="notes" class="form-control"></textarea>
 			</div>
+		</div>
 		</form>
 		<!-- load JS file after the DOM loaded to enable progessive rendering -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>

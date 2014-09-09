@@ -26,6 +26,9 @@
 			jQuery( "#attributes_box_right" ).append('<label for="'+one_field.name+'" class="col-md-8 control-label">'+one_field.label+'</label>');
 			jQuery( "#attributes_box_right" ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_field.name+'" value="" min="25" max="65" disabled="disabled" /></div>');
 		});
+		jsonObject.service_group.options.forEach(function(one_group) { 
+			jQuery( "select[name=service_group]" ).append(' <option title="'+one_group.description+' '+one_group.provide+'">'+one_group.label+'</option>');
+		});
 	}
 	
 	init_sheet();

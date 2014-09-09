@@ -173,10 +173,188 @@ var jsonObject = {
 "mutation" : "1",
 "social_group" : "1",
 "weapon" : "Laser",
-"armour" : "L", 
-"test" : "1"
- }   
+"armour" : "L",
+"skills" : [
+			{
+				"name":"skill_force_sword",
+				"label" : "Force Sword",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_grenade",
+				"label" : "Grenade",
+				"description" : "Missile Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_neurowhip",
+				"label" : "Neurowhip",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_primitive_melee_weapons",
+				"label" : "Primitive Melee Weapons",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_truncheon",
+				"label" : "Truncheon",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_unarmed",
+				"label" : "Unarmed",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_bootlicking",
+				"label" : "Bootlicking",
+				"description" : "Ingratiating yourself with your superiors.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_bribery",
+				"label" : "Bribery",
+				"description" : "Trading items for services. Use of this skill is Treasonous.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_con",
+				"label" : "Con",
+				"description" : "Persuading someone to let you do something that they probably shouldn’t.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_fast_talk",
+				"label" : "Fast Talk",
+				"description" : "Like Con, but quicker. Getting past guards at a checkpoint is Fast Talk.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_forgery",
+				"label" : "Forgery",
+				"description" : "Faking forms and signatures. Use of this skill is Treasonous.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_interrogation",
+				"label" : "Interrogation",
+				"description" : "Extracting useful information from Commie scum.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_intimidation",
+				"label" : "Intimidation",
+				"description" : "Getting cooperation from your inferiors.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_motivation",
+				"label" : "Motivation",
+				"description" : "Getting a few people thinking your idea is a good idea.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_oratory",
+				"label" : "Oratory",
+				"description" : "Speech-giving. Motivation for large groups.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_psychescan",
+				"label" : "Psychescan",
+				"description" : "Lie detection when you are talking to someone.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_suprious_logic",
+				"label" : "Suprious Logic",
+				"description" : "Con & Fast Talk for use against Bots and computers.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_energy_weapons",
+				"label" : "Energy Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_field_weapons",
+				"label" : "Field Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_laser_weapons",
+				"label" : "Laser Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_projectile_weapons",
+				"label" : "Projectile Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_primitive_missile_weapons",
+				"label" : "Primitive Missile Weapons",
+				"description" : "Bow and arrows, Bouncy Bubble Beverage containers...",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_vehicle_aimed_weapons",
+				"label" : "Vehicle Aimed Weapons",
+				"description" : "Vehicle Combat skills.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_vehicle_field_weapons",
+				"label" : "Vehicle Field Weapons",
+				"description" : "Vehicle Combat skills.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_vehicle_launched_weapons",
+				"label" : "Vehicle Launched Weapons",
+				"description" : "Vehicle Combat skills.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_habitat_engineering",
+				"label" : "Habitat Engineering",
+				"description" : "Knowledge of the air, comm, transport, water, and waste systems.",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_bot_operation",
+				"label" : "Bot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_vehicle_operation",
+				"label" : "Vehicle Operation and Maintenance",
+				"description" : "How to use and repair various vehicle types.",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_biochemical_therapy",
+				"label" : "Biochemical Therapy",
+				"description" : "Better living through Chemistry.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_",
+				"label" : "",
+				"description" : "",
+				"skillbase" : "moxie_skill_base",
+			}
+		]
+ } 
  
- 
- if(jQuery('input[name=strength]').val() > 13) damage_bonus = 1;
-		if(jQuery('input[name=strength]').val() > 18) damage_bonus = 2;
