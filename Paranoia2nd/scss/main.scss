@@ -1,3 +1,10 @@
+@mixin underline-field($thickness) {
+  border: none 0px;
+  box-shadow: none;
+  border-bottom: $thickness solid black;
+  border-radius: 0;
+}
+
 body{
 	background-color:white;
 	padding:0;
@@ -11,6 +18,8 @@ h1{
 	margin: 0;
 	text-align: center;
 	border: 2px solid black;
+	font-style: italic;
+	font-weight: bold;
 }
 h2{
 	background-color: black;
@@ -18,6 +27,8 @@ h2{
 	padding: 1% 2%;
 	text-align: center;
 	margin-left: 0;
+	font-style: italic;
+	font-weight: bold;
 }
 a{
 	color:black;
@@ -27,6 +38,13 @@ a:hover,a:visited,a:focus{
 }
 table{
 	border:0;
+}
+label{
+	font-weight: lighter;
+	font-size: 1.1em;
+}
+th{
+	text-align: center;
 }
 .character-sheet{
 	border: 2px solid black;
@@ -49,6 +67,16 @@ table{
 .skill_head{
 	border-right: 1px solid black;
 	padding: 10px 0;
+}
+.skill_head label{
+	font-style: italic;
+	font-weight: bold;
+}
+#attributes_box_right label{
+	font-style: italic;
+}
+#top-box label,#secret_box label{
+	font-weight: bold;
 }
 
 .color-rank-ir{
@@ -81,10 +109,10 @@ table{
 
 #attributes_box_left{
 	label:first-child{
-		margin-bottom: 38px;
+		margin-bottom: 20px;
 	}
 	input[name=strength]{
-		margin-bottom: 38px;
+		margin-bottom: 20px;
 	}
 	.roll_one_attribute{
 		cursor: pointer;
@@ -138,9 +166,7 @@ table{
 		display: none;
 	}
 	input,select{
-		border: none;
-		border-bottom: 1px solid black;
-		border-radius: 0;
+		@include underline-field(2px);
 	}
 	
 	.page-break	{ display: block; page-break-before: always; }

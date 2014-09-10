@@ -10,14 +10,18 @@ h1 {
   padding: 1% 2%;
   margin: 0;
   text-align: center;
-  border: 2px solid black; }
+  border: 2px solid black;
+  font-style: italic;
+  font-weight: bold; }
 
 h2 {
   background-color: black;
   color: white;
   padding: 1% 2%;
   text-align: center;
-  margin-left: 0; }
+  margin-left: 0;
+  font-style: italic;
+  font-weight: bold; }
 
 a {
   color: black; }
@@ -27,6 +31,13 @@ a:hover, a:visited, a:focus {
 
 table {
   border: 0; }
+
+label {
+  font-weight: lighter;
+  font-size: 1.1em; }
+
+th {
+  text-align: center; }
 
 .character-sheet {
   border: 2px solid black;
@@ -48,6 +59,16 @@ table {
 .skill_head {
   border-right: 1px solid black;
   padding: 10px 0; }
+
+.skill_head label {
+  font-style: italic;
+  font-weight: bold; }
+
+#attributes_box_right label {
+  font-style: italic; }
+
+#top-box label, #secret_box label {
+  font-weight: bold; }
 
 .color-rank-ir {
   color: black; }
@@ -77,9 +98,9 @@ table {
   color: white; }
 
 #attributes_box_left label:first-child {
-  margin-bottom: 38px; }
+  margin-bottom: 20px; }
 #attributes_box_left input[name=strength] {
-  margin-bottom: 38px; }
+  margin-bottom: 20px; }
 #attributes_box_left .roll_one_attribute {
   cursor: pointer; }
 
@@ -121,8 +142,9 @@ table {
     display: none; }
 
   input, select {
-    border: none;
-    border-bottom: 1px solid black;
+    border: none 0px;
+    box-shadow: none;
+    border-bottom: 2px solid black;
     border-radius: 0; }
 
   .page-break {

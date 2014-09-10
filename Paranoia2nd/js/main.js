@@ -1,6 +1,6 @@
 (function(){
 
-	var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
+	//var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
 
@@ -35,7 +35,7 @@
 		
 				if (one_skillbase.name == one_skill.skillbase) {
 					jQuery( "#"+one_skillbase.skills ).append('<label for="'+one_skill.name+'" class="col-md-8 control-label">'+one_skill.label+'</label>');
-					jQuery( "#"+one_skillbase.skills ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_skillbase.name+'" value="" title="'+one_skillbase.description+'" min="1" max="20" /></div>');
+					jQuery( "#"+one_skillbase.skills ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_skill.name+'" value="" title="'+one_skillbase.description+'" min="1" max="20" /></div>');
 				}
 			});
 		});
@@ -57,7 +57,6 @@
 
 	jQuery('#generate').click(function(){
 		event.preventDefault();
-		jQuery('#message_box').html('Random character has been generated!');
 		jsonObject.attributes.fields.forEach(function(one_attribute) {
 			randomAttribute(one_attribute.name,one_attribute.dice);
 		});
@@ -69,6 +68,7 @@
 		randomCharacterName();
 		randomMutation();
 		randomSecretSociate();
+		jQuery('#message_box').html('Random character has been generated!');
 	});
 	
 	jQuery('.roll_one_attribute').click(function(){
@@ -169,6 +169,15 @@
 			if ( jQuery('input[name='+one_skillbase+']').val() > 14 )  skill_base_value=4; 
 			if ( jQuery('input[name='+one_skillbase+']').val() > 17 )  skill_base_value=5; 
 			jQuery('input[name='+one_skillbase+'_skill_base]').val(skill_base_value);
+		});
+		updateSkills();
+	}
+	
+	function updateSkills(){
+		jsonObject.skills.forEach(function(one_skill) {
+			jQuery('input[name='+one_skill.name+']').val(jQuery('input[name='+one_skill.skillbase+']').val());
+			jQuery('input[name='+one_skill.name+']').attr('min',jQuery('input[name='+one_skill.skillbase+']').val());
+			jQuery('input[name='+one_skill.name+']').attr('max',12);
 		});
 	}
 
