@@ -361,7 +361,7 @@ var jsonObject = {
 				"skillbase" : "moxie_skill_base",
 			}
 		],
-"avaliable_equipment" : {
+"avaliable_equipments" : {
 			"starting_money" : "100",
 			"items" : [
 				{
@@ -483,6 +483,49 @@ var jsonObject = {
 					"cost" : "5",
 					"name" : "Velcro Strip (5 creds per meter)",
 					"clerence" : "red"
+				}
+			]
+		},
+"default_equipments" : {
+			"plasticreds" : "100",
+			"weapon" : {
+				"name" : "Laser Pistol",
+				"type" : "L",
+				"damage" : "8",
+				"range" : "20"
+			},
+			"armour" :{
+				"type" : "L",
+				"rating" : "4"
+			},
+			"items" : [
+				{
+					"amount" : "1",
+					"name" : "Red Reflect Armor"
+				},
+				{
+					"amount" : "1",
+					"name" : "Laser Pistol"
+				},
+				{
+					"amount" : "1",
+					"name" : "Red Laser Barrel"
+				},
+				{
+					"amount" : "1",
+					"name" : "Jumpsuit"
+				},
+				{
+					"amount" : "1",
+					"name" : "Utility Belt with Pouches"
+				},
+				{
+					"amount" : "1",
+					"name" : "Comm Unit Type I"
+				},
+				{
+					"amount" : "1",
+					"name" : "Notebook & Stylus"
 				}
 			]
 		}

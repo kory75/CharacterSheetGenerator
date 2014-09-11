@@ -39,6 +39,15 @@
 				}
 			});
 		});
+		
+		jsonObject.avaliable_equipments.items.forEach(function(one_equipment) {
+			if(one_equipment.clerence="red"){
+				jQuery( "select[name=equipment_name]" ).append('<option value="'+one_equipment.cost+'">'+one_equipment.name+ ' - ' + one_equipment.cost + ' plasticredits</option>');
+
+			}
+		});
+		
+		
 	}
 	
 	init_sheet();
