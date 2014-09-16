@@ -70,6 +70,9 @@ th {
 #top-box label, #secret_box label {
   font-weight: bold; }
 
+.nav-tabs li a {
+  margin-top: 8px; }
+
 .color-rank-ir {
   color: black; }
 

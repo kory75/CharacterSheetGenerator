@@ -124,6 +124,13 @@
 		updateSkillBase();
 	});
 	
+	$('#character_navigator a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+	
+	
+	//functions
 
 	function randomCharacterName(){
 		jQuery('input[name=character_name]').val('Joe-'+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 3).toUpperCase()+'-R-1');
