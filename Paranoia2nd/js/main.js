@@ -1,5 +1,11 @@
 (function(){
 
+	Driver = new LocalStorage();
+	Model = new Model();
+	Model.setDriver(Driver);
+	
+	
+	//todo remove these arrays
 	//var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
@@ -101,6 +107,17 @@
 		});
 		
 		jQuery('#message_box').html('Character Sheet Saved!');
+		
+		/*
+		test = new Array();
+		jQuery( "input" ).each( function( index, element ){
+				theElement = new Object;
+				theElement.name = $( this ).attr("name");
+				theElement.value = $( this ).val();
+			    test.push ( theElement );
+			});
+		Model.saveCharacter('PAR2',Model.getFreeId('PAR2'),test);
+		*/
 	});
 
 	jQuery('#print').click(function(){
