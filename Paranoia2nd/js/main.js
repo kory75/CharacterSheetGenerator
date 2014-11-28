@@ -5,6 +5,8 @@
 	Model.setDriver(Driver);
 	
 	
+	console.log(Model.getFreeId('PAR2'));
+	
 	//todo remove these arrays
 	//var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
@@ -108,7 +110,7 @@
 		
 		jQuery('#message_box').html('Character Sheet Saved!');
 		
-		/*
+		
 		test = new Array();
 		jQuery( "input" ).each( function( index, element ){
 				theElement = new Object;
@@ -117,7 +119,7 @@
 			    test.push ( theElement );
 			});
 		Model.saveCharacter('PAR2',Model.getFreeId('PAR2'),test);
-		*/
+		
 	});
 
 	jQuery('#print').click(function(){
