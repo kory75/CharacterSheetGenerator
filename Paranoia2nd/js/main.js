@@ -43,7 +43,7 @@
 		
 				if (one_skillbase.name == one_skill.skillbase) {
 					jQuery( "#"+one_skillbase.skills ).append('<label for="'+one_skill.name+'" class="col-md-8 control-label">'+one_skill.label+'</label>');
-					jQuery( "#"+one_skillbase.skills ).append('<div class="col-md-4"><input type="number" class="form-control input-sm"  name="'+one_skill.name+'" value="" title="'+one_skillbase.description+'" min="1" max="20" /></div>');
+					jQuery( "#"+one_skillbase.skills ).append('<div class="col-md-4"><input type="number" class="form-control input-sm skill_value"  name="'+one_skill.name+'" value="" title="'+one_skillbase.description+'" min="1" max="20" /></div>');
 				}
 			});
 		});
@@ -148,9 +148,38 @@
 		$(this).tab('show')
 	});
 	
+	jQuery('input.skill_value').change(function(){
+		var used_skill_points = 0;
+		
+		var skill_base_point = 0;
+		jQuery('.skill_holder').each(function( i ) {
+			skill_base_point = jQuery(this).prev().find('.skill_base').val();
+			
+			jQuery(this).find('.skill_value').each(function ( i ){
+				
+				if(skill_base_point != jQuery(this).val()){
+					used_skill_points += jQuery(this).val() - skill_base_point; 
+				}
+			} );
+			
+		});
+		//check for negative skill point
+		if(used_skill_points > 30){
+			//set skill max avaliable
+			//skill_val = parseInt(jQuery(this).val());
+			//alert(skill_val+(30-used_skill_points));
+			jQuery(this).val(parseInt(jQuery(this).val())+(30-used_skill_points));
+			jQuery('#skill_points').val(0);
+		}else{
+			//set skill points
+			jQuery('#skill_points').val(30-used_skill_points);
+		}
+		
+		
+		
+	});
 	
 	//functions
-
 	function randomCharacterName(){
 		jQuery('input[name=character_name]').val('Joe-'+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 3).toUpperCase()+'-R-1');
 		jQuery('.color-rank-red').button('toggle') ;
