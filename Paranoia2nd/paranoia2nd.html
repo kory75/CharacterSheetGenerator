@@ -61,7 +61,7 @@
 					<input type="text" class="form-control" name="player_name" value="" /><br />
 					<label for="service_group">Service Group</label>
 					<div class="input-group">
-						<select name="service_group" class="form-control">
+						<select id="service_group" name="service_group" class="form-control">
 							<!-- auto generated -->
 						</select>
 						<span class="glyphicon glyphicon-refresh input-group-addon roll_one_attribute"></span>
@@ -81,13 +81,22 @@
 				<h2>Weapons & Armour</h2>
 				<table>
 				<tr>
-				<th class="col-md-4">Weapon</th><th class="col-md-2">Skill<br />Number</th><th class="col-md-1">Type</th><th class="col-md-1">Damage<br />Rating</th><th class="col-md-2">Range</th><th class="col-md-1">Experimental?</th><th class="col-md-1"></th>
+				<th class="col-md-4">Weapon</th><th class="col-md-2">Skill<br />Number</th><th class="col-md-1">Type</th><th class="col-md-1">Damage<br />Rating</th><th class="col-md-2">Range</th><th class="col-md-1">Exp?</th>
 				</tr>
 				<tr>
-				<td><input type="text" class="form-control" name="weapon_1" value="Laser Pistol" disabled="disabled" size="20" /></td><td><input type="text" class="form-control" name="weapon_skill_number_1" value="" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="weapon_type_1" value="L" disabled="disabled" size="1"  /></td><td><input type="text" class="form-control" name="weapon_damage_rating_1" value="8" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="range" value="20" disabled="disabled" size="3" /></td><td><input type="checkbox" class="form-control" name="weapon_experimental_1" value="" disabled="disabled"  /></td><td><a id="remove_weapon" href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+				<td><input type="text" class="form-control" name="weapon_1" value="Laser Pistol" disabled="disabled" size="20" /></td><td><input type="text" class="form-control" name="weapon_skill_number_1" value="" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="weapon_type_1" value="L" disabled="disabled" size="1"  /></td><td><input type="text" class="form-control" name="weapon_damage_rating_1" value="8" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="range" value="20" disabled="disabled" size="3" /></td><td class="weapon_experimental"><input type="checkbox" class="form-control" name="weapon_experimental_1" value="" disabled="disabled"  /></td>
 				</tr>
 				<tr>
-				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td><input type="checkbox" name="weapon_experimental_2" value="" /></td><td><a id="add_weapon" href="#"><span class="glyphicon glyphicon-plus"></span></a></td>
+				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td  class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
 				</tr>
 				</table>
 				<div id="armor-box" class="col-md-12">

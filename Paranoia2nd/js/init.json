@@ -337,14 +337,39 @@ var jsonObject = {
 				"skillbase" : "mech_skill_base",
 			},
 			{
-				"name":"skill_bot_operation",
-				"label" : "Bot Operation and Maintenance",
+				"name":"skill_jackobot_operation",
+				"label" : "JackoBot Operation and Maintenance",
 				"description" : "How to use and repair the various types of bots",
 				"skillbase" : "mech_skill_base",
 			},
 			{
-				"name":"skill_vehicle_operation",
-				"label" : "Vehicle Operation and Maintenance",
+				"name":"skill_docbot_operation",
+				"label" : "DocBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_transbot_operation",
+				"label" : "TransBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_Scrubot_operation",
+				"label" : "ScruBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_vulturecraft_operation",
+				"label" : "Vulturecraft Operation and Maintenance",
+				"description" : "How to use and repair various vehicle types.",
+				"skillbase" : "mech_skill_base",
+			},
+			,
+			{
+				"name":"skill_autocar_operation",
+				"label" : "Autocar Operation and Maintenance",
 				"description" : "How to use and repair various vehicle types.",
 				"skillbase" : "mech_skill_base",
 			},
@@ -379,8 +404,8 @@ var jsonObject = {
 				"skillbase" : "moxie_skill_base",
 			},
 			{
-				"name":"skill_demolitions",
-				"label" : "Demolitions",
+				"name":"skill_demolition",
+				"label" : "Demolition",
 				"description" : "Blowing big things up without blowing yourself up too",
 				"skillbase" : "moxie_skill_base",
 			},
@@ -606,5 +631,107 @@ var jsonObject = {
 					"name" : "Notebook & Stylus"
 				}
 			]
-		}
- } 
+		},
+"service_group_skills" : {
+		"groups": [
+			{
+				"group": "IntSec",
+				"skills": [
+					{"skill":"skill_truncheon"},
+					{"skill":"skill_unarmed"},
+					{"skill":"skill_interrogation"},
+					{"skill":"skill_intimidation"},
+					{"skill":"skill_laser_weapons"},
+					{"skill":"skill_security"},
+					{"skill":"skill_surveillance"}
+				]
+			},
+			{
+				"group": "Tech Services",
+				"skills": [
+					{"skill":"skill_suprious_logic"},
+					{"skill":"skill_autocar_operation"},
+					{"skill":"skill_transbot_operation"},
+					{"skill":"skill_docbot_operation"},
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_scrubot_operation"},
+					{"skill":"skill_electronic_engineering"},
+					{"skill":"skill_mechanical_engineering"}
+				]
+			},
+			{
+				"group": "HPD&MC",
+				"skills": [
+					{"skill":"skill_bootlicking"},
+					{"skill":"skill_con"},
+					{"skill":"skill_forgery"},
+					{"skill":"skill_oratory"},
+					{"skill":"skill_docbot_operation"},
+					{"skill":"skill_biochemical_therapy"},
+					{"skill":"skill_medical"}
+				]
+			},
+			{
+				"group": "Armed Services",
+				"skills": [
+					{"skill":"skill_grenade"},
+					{"skill":"skill_primitive_melee_weapons"},
+					{"skill":"skill_unarmed"},
+					{"skill":"skill_motivation"},
+					{"skill":"skill_laser_weapons"},
+					{"skill":"skill_projectile_weapons"},
+					{"skill":"skill_demolition"},
+					{"skill":"skill_survival"},
+					{"skill":"skill_vulturecraft_operation"}
+				]
+			},
+			{
+				"group": "PLC",
+				"skills": [
+					{"skill":"skill_bribery"},
+					{"skill":"skill_fast_talk"},
+					{"skill":"skill_forgery"},
+					{"skill":"skill_habitat_engineering"},
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_biosciences"}
+				]
+			},
+			{
+				"group": "Power Services",
+				"skills": [
+					{"skill":"skill_suprious_logic"},
+					{"skill":"skill_habitat_engineering"},
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_chemical_engineering"},
+					{"skill":"skill_electronic_engineering"},
+					{"skill":"skill_mechanical_engineering"},
+					{"skill":"skill_nuclear_engineering"}
+				]
+			},
+			{
+				"group": "R&D",
+				"skills": [
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_biosciences"},
+					{"skill":"skill_data_analysis"},
+					{"skill":"skill_data_search"},
+					{"skill":"skill_electronic_engineering"},
+					{"skill":"skill_mechanical_engineering"}
+				]
+			},
+			{
+				"group": "CPU",
+				"skills": [
+					{"skill":"skill_fast_talk"},
+					{"skill":"skill_intimidation"},
+					{"skill":"skill_motivation"},
+					{"skill":"skill_psychescan"},
+					{"skill":"skill_security"},
+					{"skill":"skill_data_analysis"},
+					{"skill":"skill_data_search"}
+				]
+			}
+		]
+			
+	}			
+}

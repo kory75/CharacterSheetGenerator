@@ -12,7 +12,6 @@
 	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
 
-	var service_group_skills_1 = ['Truncheon','Unarmed', 'Interrogation','Intimidation', 'Laser Weap' ,'Security','Surveillance'];
 	
 	function init_sheet(){
 		jsonObject.attributes.fields.forEach(function(one_field) {
@@ -165,18 +164,18 @@
 		});
 		//check for negative skill point
 		if(used_skill_points > 30){
-			//set skill max avaliable
-			//skill_val = parseInt(jQuery(this).val());
-			//alert(skill_val+(30-used_skill_points));
 			jQuery(this).val(parseInt(jQuery(this).val())+(30-used_skill_points));
 			jQuery('#skill_points').val(0);
 		}else{
 			//set skill points
 			jQuery('#skill_points').val(30-used_skill_points);
 		}
-		
-		
-		
+		jQuery('input[name=weapon_skill_number_1]').val(jQuery('input[name=skill_laser_weapons]').val());
+	});
+	
+	jQuery('#service_group').change(function(){
+		updateSkills();
+		markServiceGroupSkills();
 	});
 	
 	//functions
@@ -200,6 +199,7 @@
 		if(random_number > 16) random_service_group = 2;
 		if(random_number > 18) random_service_group = 4;
 		jQuery('select[name=service_group]').val(service_groups[random_service_group]);
+		markServiceGroupSkills();
 	}
 	
 	function randomMutation(){
@@ -243,6 +243,8 @@
 			jQuery('input[name='+one_skill.name+']').attr('min',jQuery('input[name='+one_skill.skillbase+']').val());
 			jQuery('input[name='+one_skill.name+']').attr('max',12);
 		});
+		jQuery('#skill_points').val(30);
+		jQuery('input[name=weapon_skill_number_1]').val(jQuery('input[name=skill_laser_weapons]').val());
 	}
 
 	function updateCarryingCapacity(){
@@ -254,11 +256,15 @@
 	}
 	
 	function markServiceGroupSkills(){
-		if(jQuery('select[name=service_group]').val() == 'IntSec'){
-			service_group_skills_1.forEach(function(service_group_skill) {
-				//jQuery('input[name='+service_group_skill+'_skill_base]').addClass('specialised');
-			});
-		}
+		
+		jQuery('.skill_value').removeClass('group_skill').attr('max',12);
+		jsonObject.service_group_skills.groups.forEach(function(one_group_skill){
+			if(jQuery('#service_group').val()==one_group_skill.group){
+				one_group_skill.skills.forEach(function(one_skill) {
+					jQuery('input[name='+one_skill.skill+']').addClass('group_skill').attr('max',20);
+				});
+			}
+		});
 	}
 	
 })();

@@ -110,13 +110,24 @@ th {
 .navbar-default {
   margin-bottom: 0; }
 
+.group_skill {
+  font-weight: bold;
+  background-color: #d9d2d2; }
+
+.weapon_experimental input {
+  margin: 0px 0 0 21px;
+  width: 20px; }
+
 @media all {
   .page-break {
-    display: none; } }
+    display: none; }
+ }
+
 @page {
   size: A3;
   margin-left: -5cm;
   margin-right: -5cm; }
+
 @media print {
   body {
     background: white;
@@ -152,6 +163,5 @@ th {
 
   .page-break {
     display: block;
-    page-break-before: always; } }
-
-/*# sourceMappingURL=main.css.map */
+    page-break-before: always; }
+ }
