@@ -9,10 +9,12 @@
 	
 	//todo remove these arrays
 	//var attributes = ['strength','endurance','agility','dexterity','moxie','chutzpah','mech','mutant_power'];
-	var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
+	//var skillbases = ['agility','dexterity','moxie','chutzpah','mech'];
 	var service_groups = ['HPD&MC','Tech Services','R&D','PLC','CPU','Power Services','Armed Services','IntSec'];
 
-	
+	//----------------------------------//
+	//--- Initialise Character Sheet ---//
+	//----------------------------------//
 	function init_sheet(){
 		jsonObject.attributes.fields.forEach(function(one_field) {
 			jQuery( "#attributes_box_left" ).append('<label for="'+one_field.name+'" class="col-md-7 control-label">'+one_field.label+'</label>');
@@ -47,10 +49,10 @@
 			});
 		});
 		
+		jQuery( "select[name=equipment_name]" ).append('<option value=""></option>');
 		jsonObject.avaliable_equipments.items.forEach(function(one_equipment) {
 			if(one_equipment.clerence="red"){
 				jQuery( "select[name=equipment_name]" ).append('<option value="'+one_equipment.cost+'">'+one_equipment.name+ ' - ' + one_equipment.cost + ' plasticredits</option>');
-
 			}
 		});
 		
@@ -71,6 +73,9 @@
 		jQuery('#message_box').html('Character Sheet Loaded!');
 	});
 
+	//----------------------------------//
+	//--- Generate Character Sheet   ---//
+	//----------------------------------//
 	jQuery('#generate').click(function(){
 		event.preventDefault();
 		jsonObject.attributes.fields.forEach(function(one_attribute) {
@@ -87,15 +92,48 @@
 		jQuery('#message_box').html('Random character has been generated!');
 	});
 	
+	//----------------------------------//
+	//--- Roll One attribute         ---//
+	//----------------------------------//
 	jQuery('.roll_one_attribute').click(function(){
 		event.preventDefault();
-		jQuery('#message_box').html('Rolls d20!');
+		jQuery('#message_box').html('Rolls d20 for attributes!');
 		randomAttribute(jQuery(this).siblings('input').attr('name'),"d20");
 		updateCarryingCapacity();
 		updateBonus();
 		updateSkillBase();
+		markServiceGroupSkills();
+	});
+	//----------------------------------//
+	//--- On Service Group  Change   ---//
+	//----------------------------------//
+	jQuery('.roll_service_group').click(function(){
+		event.preventDefault();
+		jQuery('#message_box').html('Rolls d20 for Service group!');
+		randomServiceGroup();
+		updateSkillBase();
+		markServiceGroupSkills();
+	});
+	//----------------------------------//
+	//--- Roll Character Name     ---//
+	//----------------------------------//
+	jQuery('.roll_character_name').click(function(){
+		event.preventDefault();
+		jQuery('#message_box').html('Random Character Name!');
+		randomCharacterName();
+	});	
+	//----------------------------------//
+	//--- Roll Service Group     	---//
+	//----------------------------------//
+	jQuery('.roll_service_group').change(function(){
+		updateSkillBase();
+		markServiceGroupSkills();
 	});
 
+
+	//----------------------------------//
+	//--- Save Character sheet      ---//
+	//----------------------------------//
 	jQuery('#save').click(function(){
 		event.preventDefault();
 		
@@ -120,13 +158,17 @@
 		Model.saveCharacter('PAR2',Model.getFreeId('PAR2'),test);
 		
 	});
-
+	//----------------------------------//
+	//--- Print Caharacter sheet      ---//
+	//----------------------------------//
 	jQuery('#print').click(function(){
 		event.preventDefault();
 		window.print();
 		jQuery('#message_box').html('Printing character sheet!');
 	});
-	
+	//----------------------------------//
+	//--- Erase Caharacter sheet fields ---//
+	//----------------------------------//
 	jQuery('#reset').click(function(){
 		event.preventDefault();
 		jQuery('input').val('');
@@ -136,17 +178,25 @@
 		jQuery('#message_box').html('Form resetted!');
 	});
 	
+	//----------------------------------//
+	//--- on Attribute change      ---//
+	//----------------------------------//
 	jQuery('#attributes_box_left div input').change(function(){
 		updateCarryingCapacity();
 		updateBonus();
 		updateSkillBase();
+		markServiceGroupSkills();
 	});
+	
 	
 	$('#character_navigator a').click(function (e) {
 		e.preventDefault()
 		$(this).tab('show')
 	});
 	
+	//----------------------------------//
+	//--- On Skill Point Change      ---//
+	//----------------------------------//
 	jQuery('input.skill_value').change(function(){
 		var used_skill_points = 0;
 		
@@ -173,46 +223,62 @@
 		jQuery('input[name=weapon_skill_number_1]').val(jQuery('input[name=skill_laser_weapons]').val());
 	});
 	
-	jQuery('#service_group').change(function(){
-		updateSkills();
-		markServiceGroupSkills();
-	});
-	
+	//----------------------------------//
+	//--- Random Character Name      ---//
+	//----------------------------------//
 	//functions
 	function randomCharacterName(){
 		jQuery('input[name=character_name]').val('Joe-'+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 3).toUpperCase()+'-R-1');
 		jQuery('.color-rank-red').button('toggle') ;
 	}
 
+	//----------------------------------//
+	//--- Random attribute         ---//
+	//----------------------------------//
 	function randomAttribute(attribute_name,dice){
 		jQuery('input[name='+attribute_name+']').val( Dice.roll(dice) );
 	}
-	
+	//----------------------------------//
+	//--- Random Service Group        ---//
+	//----------------------------------//
 	function randomServiceGroup(){
+		
 		random_number =  Dice.roll("d20");
+		
+		//Use new band on json
+		//jsonObject.service_group.options.forEach(function(one_service_group) {
+			
+		//	if(random_number > one_service_group.band) random_service_group = one_service_group.label;
+		//});
+		//console.log(random_service_group);
 		random_service_group = 7;
-		if(random_number > 2) random_service_group = 1;
-		if(random_number > 4) random_service_group = 0;
-		if(random_number > 8) random_service_group = 6;
-		if(random_number > 11) random_service_group = 3;
-		if(random_number > 14) random_service_group = 5;
-		if(random_number > 16) random_service_group = 2;
-		if(random_number > 18) random_service_group = 4;
+		if(random_number > 2) random_service_group = 1;	//Tech Services
+		if(random_number > 4) random_service_group = 0; //HPD&MC
+		if(random_number > 8) random_service_group = 6; //Armed Services
+		if(random_number > 11) random_service_group = 3;//PLC
+		if(random_number > 14) random_service_group = 5;//Power Services
+		if(random_number > 16) random_service_group = 2;//R&D
+		if(random_number > 18) random_service_group = 4;//CPU
 		jQuery('select[name=service_group]').val(service_groups[random_service_group]);
 		markServiceGroupSkills();
 	}
-	
+	//----------------------------------//
+	//--- Random Mutation       ---//
+	//----------------------------------//
 	function randomMutation(){
 		random_number =  Dice.roll("d20");
 		jQuery('select[name=mutation]').val(random_number);
 	}
-	
+	//----------------------------------//
+	//--- Random Secret Sociate      ---//
+	//----------------------------------//
 	function randomSecretSociate(){
 		// TODO some of the secret sociates has higher chance. There are less  sec. soc. than 20 
 		random_number =  Dice.roll("d20");
 		jQuery('select[name=secret_sociate]').val(random_number);
 	}
-
+	
+	
 	function updateBonus(){
 		damage_bonus = 0; macho_bonus = 0;
 		if(jQuery('input[name=strength]').val() > 13) damage_bonus = 1;
@@ -225,14 +291,14 @@
 
 	function updateSkillBase(){
 		
-		skillbases.forEach(function(one_skillbase) {
+		jsonObject.skillbases.fields.forEach(function(one_skillbase) {
 			skill_base_value=0; 
-			if ( jQuery('input[name='+one_skillbase+']').val() > 3 )  skill_base_value=1;
-			if ( jQuery('input[name='+one_skillbase+']').val() > 6 )  skill_base_value=2; 
-			if ( jQuery('input[name='+one_skillbase+']').val() > 10 )  skill_base_value=3; 
-			if ( jQuery('input[name='+one_skillbase+']').val() > 14 )  skill_base_value=4; 
-			if ( jQuery('input[name='+one_skillbase+']').val() > 17 )  skill_base_value=5; 
-			jQuery('input[name='+one_skillbase+'_skill_base]').val(skill_base_value);
+			jsonObject.skillbases.skillbase_bands.forEach(function(skillbase_band) {
+				if ( parseInt(jQuery('input[name='+one_skillbase.attribute+']').val()) > skillbase_band.band ) {
+					skill_base_value=skillbase_band.skill;
+				}			
+			});
+			jQuery('input[name='+one_skillbase.attribute+'_skill_base]').val(skill_base_value);
 		});
 		updateSkills();
 	}
@@ -254,7 +320,10 @@
 		}
 		jQuery('input[name=carrying_capacity]').val( ((carrying_capacity_base)*5)+25 );
 	}
-	
+	//----------------------------------//
+	//--- Service group skills can go up //
+	//---- to 20 mark them grey      ---//
+	//----------------------------------//
 	function markServiceGroupSkills(){
 		
 		jQuery('.skill_value').removeClass('group_skill').attr('max',12);

@@ -55,7 +55,13 @@ var jsonObject = {
 		},		
 "skillbases" : {
 		"dice" : "d20",
-		"bonus_bands" : { "1" : "1","3" : "2","6" : "2","10" : "3","14" : "4","17" : "5" },
+		"skillbase_bands" : [
+		{ 	"band":"0" , "skill" : "0"},
+		{	"band":"3" , "skill" : "1"},
+		{	"band":"6" , "skill" : "2"},
+		{	"band":"10", "skill" : "3"},
+		{	"band":"14", "skill" : "4"},
+		{	"band":"17", "skill" : "5" }],
 		"fields" :
 		[
 		{
@@ -135,41 +141,49 @@ var jsonObject = {
 			"options" : [
 				{
 					"label" : "HPD&MC",
+					"band" : "4",
 					"description" : "Housing Preservation Development and Mind Control aka 'HPD&MC' HPD & MC is responsible for the health and welfare of all citizens. They house, clothe, provide medicines and make sure that everyone is a Happy Citizen. Are you Happy?",
 					"provide" : "Medicines and drugs"	
 				},
 				{
 					"label" : "Tec Services",
+					"band" : "2",
 					"description" : "Technical Services aka 'Tech Services' If it's broken (which it isn't), tech services can fix it. All manner of devices and weapons can be brought to them to repair. Happily, things don't need repairing often, do they citizen?",
 					"provide" : "Repairs"
 				},
 				{
 					"label" : "R&D",
+					"band" : "16",
 					"description" : "Research and Design aka 'R&D', 'The East Wind' Research and design are in charge of creating new, wonderful devices! These marvels of technology explore brave new worlds and carry out heretofore unknown functions! All troubleshooters should be proud to have R&D's experimental prototypes at their side.",
 					"provide" : "Experimental devices"
 				},
 				{
 					"label" : "PLC",
+					"band" : "11",
 					"description" : "Production, Logistics, and Commissary aka 'PLC' Production, Logistics, and Commissary provides needed goods and services. These include foodstuffs (Hot Fun! and Cold Fun!), drinks (Bouncy Bubble Beverage!), and clothing (One Size Fits All uniforms!). They also have all the lasers.",
 					"provide" : "Food! Clothes! Lasers!"
 				},
 				{
 					"label" : "CPU",
+					"band" : "18",
 					"description" : "Central Processing Unit aka 'CPU' Central Processing Unit ensures that all other service groups in carry out their tasks in coordination with each other. They are essential to the flawless functioning of Alpha Complex. They provide endless amounts of guiding hierarchy. Most significantly they help note potentially treasonous or promotional behavior.",
 					"provide" : "Records of missions, witnesses of other Troubleshooter's actions."
 				},
 				{
 					"label" : "Power Services",
+					"band" : "14",
 					"description" : "Power Services aka 'Power Services' Power services provides power for the entire complex! This difficult work typically involves them standing around large poles drinking Hot Fun for many hours a day. They also are in charge of reqisitioning large vehicles and devices. Power services members tend to be early risers.",
 					"provide" : "Big Devices and Vehicles"
 				},
 				{
 					"label" : "Armed Services",
+					"band" : "8",
 					"description" : "Armed Services aka 'The Army' Armed Services protects Alpha Complex from invaders from without. The fact that no one has invaded Alpha Complex in its history is testament to their excellent work! These stalwart troops are armed to the teeth and prepared to die for the safety of our complex.",
 					"provide" : "Heavy Weaponry"
 				},
 				{
 					"label" : "IntSec",
+					"band" : "0",
 					"description" : "Internal Security aka 'IntSec' Unfortunately, not all citizens of Alpha Complex are Good and Loyal (tm). It has been said that a few might even be corrupt followers of the Dark Computer. But not for long, with internal security around to take care of them. Their treasonous behaviour is Being Watched, even now.",
 					"provide" : "Security for all Citizens. And Termination Vouchers"
 				}

@@ -40,20 +40,37 @@
 					<label for="character_name">Character Name</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="character_name" value="" />
-						<span class="glyphicon glyphicon-refresh input-group-addon roll_one_attribute"></span>
+						<span class="glyphicon glyphicon-refresh input-group-addon roll_character_name"></span>
 					</div><br />
-					
 					<label for="">Color Rank</label><br/>
-					<div class="btn-group">
-					  <button type="button" class="btn btn-primary color-rank color-rank-ir" value="ir">(IR)</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-r" value="r">R</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-o" value="o">O</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-y" value="y">Y</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-g" value="g">G</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-b" value="b">B</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-i" value="i">I</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-v" value="v">V</button>
-					  <button type="button" class="btn btn-primary color-rank color-rank-uv" value="uv">(UV)</button>
+					<div class="input-group" id="rank_holder">	
+						<label class="radio-inline color-rank color-rank-ir" >
+						  <input type="radio" name="Rank" id="color-rank-ir" value="IR"> (IR)
+						</label>
+						<label class="radio-inline color-rank color-rank-r">
+						  <input type="radio" name="Rank"  id="color-rank-r" value="R"> R
+						</label>
+						<label class="radio-inline color-rank color-rank-o" >
+						  <input type="radio" name="Rank" id="color-rank-o" value="O"> O
+						</label>
+						<label class="radio-inline color-rank color-rank-y">
+						  <input type="radio" name="Rank" id="color-rank-y" value="Y"> Y
+						</label>
+						<label class="radio-inline color-rank color-rank-g">
+						  <input type="radio" name="Rank"  id="color-rank-g" value="G"> G
+						</label>
+						<label class="radio-inline color-rank color-rank-b">
+						  <input type="radio" name="Rank" id="color-rank-b" value="B"> B
+						</label>
+						<label class="radio-inline color-rank color-rank-i">
+						  <input type="radio" name="Rank" id="color-rank-i" value="I"> I
+						</label>
+						<label class="radio-inline color-rank color-rank-v">
+						  <input type="radio" name="Rank"  id="color-rank-v" value="V"> V
+						</label>
+						<label class="radio-inline color-rank color-rank-uv">
+						  <input type="radio" name="Rank" id="color-rank-uv" value="UV"> (UV)
+						</label>
 					</div>
 				</div>
 				<div class="col-md-6">	
@@ -64,7 +81,7 @@
 						<select id="service_group" name="service_group" class="form-control">
 							<!-- auto generated -->
 						</select>
-						<span class="glyphicon glyphicon-refresh input-group-addon roll_one_attribute"></span>
+						<span class="glyphicon glyphicon-refresh input-group-addon roll_service_group"></span>
 					</div>
 				</div>	
 			</div>
@@ -87,16 +104,16 @@
 				<td><input type="text" class="form-control" name="weapon_1" value="Laser Pistol" disabled="disabled" size="20" /></td><td><input type="text" class="form-control" name="weapon_skill_number_1" value="" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="weapon_type_1" value="L" disabled="disabled" size="1"  /></td><td><input type="text" class="form-control" name="weapon_damage_rating_1" value="8" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="range" value="20" disabled="disabled" size="3" /></td><td class="weapon_experimental"><input type="checkbox" class="form-control" name="weapon_experimental_1" value="" disabled="disabled"  /></td>
 				</tr>
 				<tr>
-				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental_2"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
 				</tr>
 				<tr>
-				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td  class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				<td><input type="text" class="form-control" name="weapon_3" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_3" value=""></td><td><input type="text" class="form-control" name="weapon_type_3" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_3" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td  class="weapon_experimental_3"><input type="checkbox" name="weapon_experimental_3" value="" /></td>
 				</tr>
 				<tr>
-				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				<td><input type="text" class="form-control" name="weapon_4" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_4" value=""></td><td><input type="text" class="form-control" name="weapon_type_4" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_4" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental_4"><input type="checkbox" name="weapon_experimental_4" value="" /></td>
 				</tr>
 				<tr>
-				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				<td><input type="text" class="form-control" name="weapon_5" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_5" value=""></td><td><input type="text" class="form-control" name="weapon_type_5" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_5" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental_5"><input type="checkbox" name="weapon_experimental_5" value="" /></td>
 				</tr>
 				</table>
 				<div id="armor-box" class="col-md-12">
@@ -218,23 +235,47 @@
 					</select>
 				</div>
 			</div>
-			<div id="equipments" class="col-md-6">
+			<div id="equipments_holder" class="col-md-12">
 				<h2>Equipments</h2>
-				<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
-				<select name="equipment_name" class="form-control" class="col-md-9">
-				</select>
-				<a id="add_weapon" href="#"><span class="glyphicon glyphicon-plus"></span></a>
-				<ul>
-					<li><input type="text" name="credit" value="100"  disabled="disabled" /> Plasticreds</li>
-					<li>1 Red Reflect Armor</li>
-					<li>1 Laser Pistol</li>
-					<li>1 Red Laser Barrel</li>
-					<li>1 Jumpsuit</li>
-					<li>1 Utility Belt with Pouches</li>
-					<li>1 Comm Unit Type I</li>
-					<li>1 Notebook & Stylus</li>
-					
-				</ul>
+				<div id="equipments_left" class="col-md-6">
+					<ul>
+						<li><input type="text" name="credit" value="100"  disabled="disabled" /> Plasticreds</li>
+						<li>1 Red Reflect Armor</li>
+						<li>1 Laser Pistol</li>
+						<li>1 Red Laser Barrel</li>
+						<li>1 Jumpsuit</li>
+						<li>1 Utility Belt with Pouches</li>
+						<li>1 Comm Unit Type I</li>
+						<li>1 Notebook & Stylus</li>
+					</ul>
+				</div>
+				<div id="equipments_right" class="col-md-6">
+					<div class="col-md-4">
+					<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
+					</div>
+					<div class="col-md-8">
+					<select name="equipment_name" class="form-control" class="col-md-9">
+					</select>
+					</div>
+				</div>
+				<div id="equipments_right" class="col-md-6">
+					<div class="col-md-4">
+					<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
+					</div>
+					<div class="col-md-8">
+					<select name="equipment_name" class="form-control" class="col-md-9">
+					</select>
+					</div>
+				</div>
+				<div id="equipments_right" class="col-md-6">
+					<div class="col-md-4">
+					<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
+					</div>
+					<div class="col-md-8">
+					<select name="equipment_name" class="form-control" class="col-md-9">
+					</select>
+					</div>
+				</div>
 			</div>
 			<div id="notes" class="col-md-12">
 				<h2>Notes</h2>
