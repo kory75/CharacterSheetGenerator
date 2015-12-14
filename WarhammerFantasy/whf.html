@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Character Generator</title>
 
 		<!-- angular core lib files -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-animate.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-aria.min.js"></script>
 
@@ -13,12 +13,14 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
 		
-		<!-- core stylesheets -->
-		<link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/v1.0.0-rc5/angular-material.css">
-		
 		<!-- app js --> 
+		<script src="./js/init.json"></script>
 		<script src="./js/app.js"></script>
 		<script src="./js/whfCtrl.js"></script>
+		
+		
+		<!-- core stylesheets -->
+		<link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/v1.0.0-rc5/angular-material.css">
 		
 		<!-- load app specific stylesheet -->
 		<link rel="stylesheet" href="css/main.css">
@@ -26,31 +28,196 @@
 		
 		
 	</head>
-	<body>
+	<body ng-controller="whfCtrl">
 		
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav" id="menu-bar">
-					<li><a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a></li>
-					<li><a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a></li>
-					<li><a id="level" href="#">Level <span class="glyphicon glyphicon-plus"></span></a></li>
-					<li><a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a></li>
-					<li><a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a></li>
-					<li><a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a></li>
-					<li><a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a></li>
-				</ul>
-				<ul id="character_navigator" class="nav nav-tabs" role="tablist">
-					<li class="active"><a href="#">Character 1 <span class="glyphicon glyphicon-floppy-open"></span></a></li>
-					<li><a id="load" href="#">Character 2 <span class="glyphicon glyphicon-floppy-open"></span></a></li>
-					<li><a id="new" href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
-				</ul>
-			</div>
-		</nav>
-		<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
-		<form action="" method="GET">
-		<div class="character-sheet page-1 col-md-12">
-			<h1>Warhammer Fantasy Character Sheet</h1>
-		</div>
-		</form>
+		<header >
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav" id="menu-bar" layout="row">
+						<li flex><a id="back" href="../index.html"> Back <ng-md-icon icon="home" style="fill:blue" size="15"></ng-md-icon></a></li>
+						<li flex="20"><a id="generate" href="#"> New Random Character <ng-md-icon icon="autorenew" style="fill:blue" size="15"></span></a></li>
+						<li flex><a id="level" href="#">Level <ng-md-icon icon="file_upload" style="fill:blue" size="15"></a></li>
+						<li flex><a id="load" href="#">Load <ng-md-icon icon="cloud_download" style="fill:blue" size="15"></span></a></li>
+						<li flex><a id="save" href="#">Save <ng-md-icon icon="cloud_upload" style="fill:blue" size="15"></a></li>
+						<li flex><a id="print" href="#">Print <ng-md-icon icon="print" style="fill:blue" size="15"></a></li>
+						<li flex><a id="reset" href="#">Reset <ng-md-icon icon="clear" style="fill:blue" size="15">></span></a></li>
+					</ul>
+					<ul id="character_navigator" class="nav nav-tabs" role="tablist" layout="row">
+						<li class="active" flex><a href="#">Character 1 <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+						<li flex><a id="load" href="#">Character 2 <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+						<li flex><a id="new" href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="message_box" class="alert alert-info" role="alert"></div>
+			<form action="" method="GET" >
+				<div class="character-sheet page-1 " layout="column">
+					
+					<div class="title-area" flex layout="row">
+						<h1 flex="60">Character Sheet</h1>
+						<h2 flex="40">Warhammer Fantasy Roleplaying Game</h2>
+					</div>
+					
+					
+					<div class="general-area" flex layout="row" layout-wrap>
+						<md-input-container class="md-block" flex="40">
+							<label no-float>Name</label>
+					    	<input ng-model="whf.name" >
+						</md-input-container>
+						<md-input-container flex="15">
+					        <label>Race</label>
+					        <md-select ng-model="whf.race">
+					          <md-option ng-repeat="race in presets.race" value="{{race}}">
+					            {{race}}
+					          </md-option>
+					        </md-select>
+						</md-input-container>
+						<md-input-container flex="15">
+					        <label>Gender</label>
+					        <md-select ng-model="whf.gender">
+					          <md-option ng-repeat="gender in presets.gender" value="{{gender}}">
+					            {{gender}}
+					          </md-option>
+					        </md-select>
+						</md-input-container>
+						<md-input-container flex="15">
+					        <label>Carrier Class</label>
+					        <md-select ng-model="whf.carrier_class">
+					          <md-option ng-repeat="carrier_class in presets.carrier_class" value="{{carrier_class}}">
+					            {{carrier_class}}
+					          </md-option>
+					        </md-select>
+						</md-input-container>
+						<md-input-container flex="15">
+					        <label>Alignment</label>
+					        <md-select ng-model="whf.alignment">
+					          <md-option ng-repeat="alignment in presets.alignment" value="{{alignment}}">
+					            {{alignment}}
+					          </md-option>
+					        </md-select>
+						</md-input-container>
+	
+						<md-input-container md-no-float class="md-block" flex="15">
+							<label>Age</label>
+					    	<input ng-model="whf.age" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="15">
+							<label>Height</label>
+					    	<input ng-model="whf.height" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="15">
+							<label>Weight</label>
+					    	<input ng-model="whf.weight" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="15">
+							<label>Hair</label>
+					    	<input ng-model="whf.hair" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="15">
+							<label>Eyes</label>
+					    	<input ng-model="whf.eyes" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="25">
+							<label>Description</label>
+					    	<input ng-model="whf.description" >
+						</md-input-container>
+						
+						<md-input-container md-no-float class="md-block" flex="30">
+							<label>Current Carrier</label>
+					    	<input ng-model="whf.current_carrier" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="35">
+							<label>Carrier Path</label>
+					    	<input ng-model="whf.carrier_path" >
+						</md-input-container>
+						<md-input-container md-no-float class="md-block" flex="35">
+							<label>Carrier Exits</label>
+					    	<input ng-model="whf.carrier_exits" >
+						</md-input-container>
+						
+					</div>
+					
+					<div class="attribute-area" >
+					
+						<table class="attribute-table" layout="column">
+							<tr flex layout="row">
+								<th flex="15"></th>
+								<th flex>M</td>
+								<th flex>WS</td>
+								<th flex>BS</td>
+								<th flex>S</td>
+								<th flex>T</td>
+								<th flex>W</td>
+								<th flex>I</td>		
+								<th flex>A</td>
+								<th flex>Dex</td>
+								<th flex>Ld</td>
+								<th flex>Int</td>
+								<th flex>Cl</td>
+								<th flex>WP</td>
+								<th flex>Fel</td>
+							</tr>
+							<tr flex layout="row">
+								<th flex="15">Starter Profile</th>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+							</tr>
+							<tr flex layout="row">
+								<th flex="15">Advance Scheme</th>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+							</tr>
+							<tr flex layout="row">
+								<th flex="15">Current Profile</th>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+								<td flex><input ng-model="whf.starter_profile.m" type="number"></td>
+							</tr>
+						</table>
+					
+					</div>
+					
+					<div class="weapons-skills-area">
+					
+					</div>
+					
+				</div>
+			</form>
 	</body>
 </html>

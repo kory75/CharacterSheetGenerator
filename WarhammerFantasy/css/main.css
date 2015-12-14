@@ -1,2 +1,44 @@
 body {
-  background: white; }
+  background: white;
+  font-family: fantasy;
+  font-size: 1em;
+  font-weight: bolder; }
+
+md-input-container label {
+  background-color: black;
+  color: white !important;
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 1.2em;
+  height: 50px; }
+
+md-input-container input {
+  height: 50px;
+  font-weight: bold; }
+
+table.attribute-table {
+  width: 100%; }
+  table.attribute-table tr th {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 1.5em;
+    height: 62px;
+    padding-top: 10px; }
+  table.attribute-table tr td {
+    text-align: center;
+    font-weight: bold;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black; }
+    table.attribute-table tr td input {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      width: 81%;
+      height: 50px;
+      padding: 4px 0 4px 10px; }

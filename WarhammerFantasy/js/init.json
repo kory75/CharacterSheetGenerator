@@ -1,0 +1,6 @@
+var jsonObject = {
+"gender": ["male","female"],
+"race": ["Human","Elf","Dwarf","Halfling"],
+"alignment": ["Law","Good","Netral","Evil","Chaos"],
+"carrier_class": ["Academic","Warrior","Rough"]
+}
