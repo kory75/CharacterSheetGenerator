@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cthulhuApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Character Generator 0.1</title>
+
+		<!--load Bootstrap css from CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- load app specific stylesheet -->
+		<link rel="stylesheet" href="css/main.css">
+		
+	</head>
+	<body ng-controller="CharSheetController as charsheet">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav" id="menu-bar">
+					<li><a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a></li>
+					<li><a id="generate" ng-click="onRandom()" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a></li>
+					<li><a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+					<li><a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a></li>
+					<li><a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a></li>
+					<li><a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a></li>
+				</ul>
+			</div>
+		</nav>
+		<h1>Call Of Cthulhu Character Sheet</h1>
+		<div id="message_box" class="alert alert-info col-md-12 hide" role="alert"></div>
+			<fieldset class="col-md-12" ng-repeat="section in charsheet.form">
+				<legend>{{section.fieldsetName}}</legend>
+				<div class="col-sm-4" ng-class="(field.size == 'medium') ? 'col-sm-4' : 'col-sm-2'" ng-repeat="field in section.fields">
+					<label for="{{field.name}}" class="control-label">{{field.label}}</label>
+					<input type="{{field.type}}" class="form-control input-sm"  name="{{field.name}}" ng-model="field.model" />
+					<a ng-show="field.dice" ng-click="diceRoll(field.name, field.dice)" class="btn btn-primary">roll</a>
+				</div>
+			</fieldset>
+
+			<a ng-click="onDebugger()" class='btn btn-success'>Confirm dataset</a>
+
+		<!-- load JS file after the DOM loaded to enable progessive rendering -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+		<script src="../singleton/dice.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

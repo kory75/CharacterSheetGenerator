@@ -1,0 +1,47 @@
+body{
+	background-color:white;
+	padding:1% 0;
+}
+a{
+	color:black;
+}
+a:hover,a:visited,a:focus{
+	text-decoration:none;
+}
+table{
+	border:0;
+}
+.color-rank-ir{
+	color: black;
+}
+.color-rank-r{
+	color: red;
+}
+.color-rank-o{
+	color: orange;
+}
+.color-rank-y{
+	color: yellow;
+}
+.color-rank-g{
+	color: green;
+}
+.color-rank-b{
+	color: blue;
+}
+.color-rank-i{
+	color:  #4b0082;
+}
+.color-rank-v{
+	color: violet;
+}
+.color-rank-uv{
+	color: white;
+}
+
+@media print{
+	body{
+		background: white;
+		color:black;
+	}
+}

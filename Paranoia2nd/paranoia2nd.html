@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Character Generator 0.1</title>
+
+		<!--load Bootstrap css from CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- load app specific stylesheet -->
+		<link rel="stylesheet" href="css/main.css">
+		
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav" id="menu-bar">
+					<li><a id="back" href="../index.html"> Back <span class="glyphicon glyphicon-arrow-left"></span></a></li>
+					<li><a id="generate" href="#"> New Random Character <span class="glyphicon glyphicon-play-circle"></span></a></li>
+					<li><a id="level" href="#">Level <span class="glyphicon glyphicon-plus"></span></a></li>
+					<li><a id="load" href="#">Load <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+					<li><a id="save" href="#">Save <span class="glyphicon glyphicon-floppy-save"></span></a></li>
+					<li><a id="print" href="#">Print <span class="glyphicon glyphicon-print"></span></a></li>
+					<li><a id="reset" href="#">Reset <span class="glyphicon glyphicon-trash"></span></a></li>
+				</ul>
+				<ul id="character_navigator" class="nav nav-tabs" role="tablist">
+					<li class="active"><a href="#">Character 1 <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+					<li><a id="load" href="#">Character 2 <span class="glyphicon glyphicon-floppy-open"></span></a></li>
+					<li><a id="new" href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
+				</ul>
+			</div>
+		</nav>
+		<div id="message_box" class="alert alert-info col-md-12" role="alert"></div>
+		<form action="" method="GET">
+		<div class="character-sheet page-1 col-md-12">
+			<h1>Paranoia Character Sheet</h1>
+			<div id="top-box" class="col-md-12">
+				<div class="col-md-6">
+					<label for="character_name">Character Name</label>
+					<div class="input-group">
+						<input type="text" class="form-control" name="character_name" value="" />
+						<span class="glyphicon glyphicon-refresh input-group-addon roll_character_name"></span>
+					</div><br />
+					<label for="">Color Rank</label><br/>
+					<div class="input-group" id="rank_holder">	
+						<label class="radio-inline color-rank color-rank-ir" >
+						  <input type="radio" name="Rank" id="color-rank-ir" value="IR"> (IR)
+						</label>
+						<label class="radio-inline color-rank color-rank-r">
+						  <input type="radio" name="Rank"  id="color-rank-r" value="R"> R
+						</label>
+						<label class="radio-inline color-rank color-rank-o" >
+						  <input type="radio" name="Rank" id="color-rank-o" value="O"> O
+						</label>
+						<label class="radio-inline color-rank color-rank-y">
+						  <input type="radio" name="Rank" id="color-rank-y" value="Y"> Y
+						</label>
+						<label class="radio-inline color-rank color-rank-g">
+						  <input type="radio" name="Rank"  id="color-rank-g" value="G"> G
+						</label>
+						<label class="radio-inline color-rank color-rank-b">
+						  <input type="radio" name="Rank" id="color-rank-b" value="B"> B
+						</label>
+						<label class="radio-inline color-rank color-rank-i">
+						  <input type="radio" name="Rank" id="color-rank-i" value="I"> I
+						</label>
+						<label class="radio-inline color-rank color-rank-v">
+						  <input type="radio" name="Rank"  id="color-rank-v" value="V"> V
+						</label>
+						<label class="radio-inline color-rank color-rank-uv">
+						  <input type="radio" name="Rank" id="color-rank-uv" value="UV"> (UV)
+						</label>
+					</div>
+				</div>
+				<div class="col-md-6">	
+					<label for="player_name">Player Name</label>
+					<input type="text" class="form-control" name="player_name" value="" /><br />
+					<label for="service_group">Service Group</label>
+					<div class="input-group">
+						<select id="service_group" name="service_group" class="form-control">
+							<!-- auto generated -->
+						</select>
+						<span class="glyphicon glyphicon-refresh input-group-addon roll_service_group"></span>
+					</div>
+				</div>	
+			</div>
+			<div id="attributes_box" class="col-md-6">
+				<h2>Attributes</h2>
+				<div id="attributes_box_left" class="col-md-6">
+					<!-- auto generated -->
+				</div>
+				<div id="attributes_box_right" class="col-md-6">
+					<!-- auto generated -->
+				</div>
+			</div>
+			<div id="weapons" class="col-md-6">
+				<h2>Weapons & Armour</h2>
+				<table>
+				<tr>
+				<th class="col-md-4">Weapon</th><th class="col-md-2">Skill<br />Number</th><th class="col-md-1">Type</th><th class="col-md-1">Damage<br />Rating</th><th class="col-md-2">Range</th><th class="col-md-1">Exp?</th>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_1" value="Laser Pistol" disabled="disabled" size="20" /></td><td><input type="text" class="form-control" name="weapon_skill_number_1" value="" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="weapon_type_1" value="L" disabled="disabled" size="1"  /></td><td><input type="text" class="form-control" name="weapon_damage_rating_1" value="8" disabled="disabled" size="2" /></td><td><input type="text" class="form-control" name="range" value="20" disabled="disabled" size="3" /></td><td class="weapon_experimental"><input type="checkbox" class="form-control" name="weapon_experimental_1" value="" disabled="disabled"  /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_2" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_2" value=""></td><td><input type="text" class="form-control" name="weapon_type_2" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_2" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental_2"><input type="checkbox" name="weapon_experimental_2" value="" /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_3" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_3" value=""></td><td><input type="text" class="form-control" name="weapon_type_3" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_3" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td  class="weapon_experimental_3"><input type="checkbox" name="weapon_experimental_3" value="" /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_4" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_4" value=""></td><td><input type="text" class="form-control" name="weapon_type_4" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_4" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental_4"><input type="checkbox" name="weapon_experimental_4" value="" /></td>
+				</tr>
+				<tr>
+				<td><input type="text" class="form-control" name="weapon_5" value="" /></td><td><input type="text" class="form-control" name="weapon_skill_number_5" value=""></td><td><input type="text" class="form-control" name="weapon_type_5" value="" /></td><td><input type="text" class="form-control" name="weapon_damage_rating_5" value="" /></td><td><input type="text" class="form-control" name="range" value="" /></td><td class="weapon_experimental_5"><input type="checkbox" name="weapon_experimental_5" value="" /></td>
+				</tr>
+				</table>
+				<div id="armor-box" class="col-md-12">
+					<div class="col-md-6">
+						<label for="armor_worn">Armour Worn</label>
+						<input type="text" class="form-control" name="armor_worn" value="L"   />
+					</div>
+					<div class="col-md-6">
+						<label for="armor_ratings">Ratings</label>
+						<input type="text" class="form-control" name="armor_ratings" value="4"   />
+					</div>
+				</div>
+			</div>
+			<div id="skill_box" class="col-md-12">
+			<h2>Skills</h2>
+			<div id="skills-box">
+				<label for="skill_points" class="col-md-2 control-label">Available points</label>
+				<div class="col-md-1">
+					<input type="text" id="skill_points" class="form-control input-sm" name="skill_points" value="30"  size="2" disabled="disabled" />
+				</div>
+				<div id="skill_box" class="col-md-12">
+					<div id="skill_box_left" class="col-md-4">
+						<div class="skill_head col-md-12">
+							<label for="agility_skill_base" class="col-md-10">Agility Skill Base</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control input-sm skill_base" name="agility_skill_base" value=""  size="1" disabled="disabled" />
+							</div>
+						</div>
+						<div id="agility_skills" class="col-md-12 skill_holder"></div>
+						<div class="skill_head col-md-12">
+							<label for="chutzpah_skill_base" class="col-md-10">Chutzpah Skill Base</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control input-sm skill_base" name="chutzpah_skill_base" value=""  min="0" max="20" disabled="disabled" />
+							</div>
+						</div>
+						<div id="chutzpah_skills" class="col-md-12 skill_holder"></div>
+					</div>
+					<div id="skill_box_middle" class="col-md-4">
+						<div class="skill_head col-md-12">
+							<label for="dexterity_skill_base" class="col-md-10">Dexterity Skill Base</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control input-sm skill_base" name="dexterity_skill_base" value=""  size="1" disabled="disabled" />
+								</div>
+						</div>
+						<div id="dexterity_skills" class="col-md-12 skill_holder">
+					</div>
+					<div class="skill_head col-md-12">	
+						<label for="mech_skill_base" class="col-md-10">Mech. Apt. Skill Base</label>
+						<div class="col-md-2">
+						<input type="text" class="form-control input-sm skill_base" name="mech_skill_base" value=""  size="1" disabled="disabled"  />
+						</div>
+					</div>
+					<div id="mech_skills" class="col-md-12 skill_holder">
+					</div>
+					</div>
+					<div id="skill_box_right" class="col-md-4">
+						<div class="skill_head col-md-12">
+							<label for="moxie_skill_base" class="col-md-8">Moxie Skill Base</label>
+							<div class="col-md-4">
+								<input type="text" class="form-control input-sm skill_base" name="moxie_skill_base" value=""  size="1" disabled="disabled" /><br />
+							</div>
+						</div>
+						<div id="moxie_skills" class="col-md-12 skill_holder">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="page-break"></div>
+		<div class="character-sheet page-2 col-md-12">
+			<h1 class="col-md-12 secret-page">Paranoia Character Sheet (Secret)</h1>
+			<div id="secret_box">
+				<div id="mutation" class="col-md-6">
+					<label for="mutation">Mutation</label>
+					<select name="mutation" class="form-control">
+						    <option title="" value="1">Adrenaline Control</option>
+						    <option title="" value="2">Charm</option>
+						    <option title="" value="3">Deep Probe</option>
+						    <option title="" value="4">Electroshock</option>
+						    <option title="" value="5">Empathy</option>
+						    <option title="" value="6">Energy Field</option>
+						    <option title="" value="7">Hypersenses</option>
+						    <option title="" value="8">Levitation</option>
+						    <option title="" value="9">Machine Empathy</option>
+						    <option title="" value="10">Matter Eater</option>
+						    <option title="" value="11">Mechanical Intuition</option>
+							<option title="" value="12">Mental Blast</option>
+							<option title="" value="13">Polymorphism</option>
+							<option title="" value="14">Precognition</option>
+							<option title="" value="15">Pyrokinesis</option>
+							<option title="" value="16">Regeneration</option>
+							<option title="" value="17">Telekinesis</option>
+							<option title="" value="18">Telepathy</option>
+							<option title="" value="19">Teleport</option>
+							<option title="" value="20">X-Ray Vision</option>
+					</select>
+				</div>
+				<div id="secret_sociate" class="col-md-6">
+					<label for="secret_sociate">Secret Sociate</label>
+					<select name="secret_sociate" class="form-control">
+							<option title="" value="1">Anti-Mutant</option>
+						    <option title="" value="2">Computer Phreaks</option>
+						    <option title="" value="3">Communists</option>
+						    <option title="" value="4">Corpore Metal</option>
+						    <option title="" value="5">Death Leopard</option>
+						    <option title="" value="6">FCCCP</option>
+						    <option title="" value="7">Frankenstein Destroyers</option>
+						    <option title="" value="8">Free Enterprise</option>
+						    <option title="" value="9">Humanists</option>
+						    <option title="" value="10">Illuminati</option>
+						    <option title="" value="11">Mystics</option>
+						    <option title="" value="12">Pro Tech</option>
+						    <option title="" value="13">Psion</option>
+						    <option title="" value="14">PURGE</option>
+						    <option title="" value="15">Romantics</option>
+						    <option title="" value="16">Sierra Club</option>
+						    <option title="" value="17">“Other”</option>
+					</select>
+				</div>
+			</div>
+			<div id="equipments_holder" class="col-md-12">
+				<h2>Equipments</h2>
+				<div id="equipments_left" class="col-md-6">
+					<ul>
+						<li><input type="text" name="credit" value="100"  disabled="disabled" /> Plasticreds</li>
+						<li>1 Red Reflect Armor</li>
+						<li>1 Laser Pistol</li>
+						<li>1 Red Laser Barrel</li>
+						<li>1 Jumpsuit</li>
+						<li>1 Utility Belt with Pouches</li>
+						<li>1 Comm Unit Type I</li>
+						<li>1 Notebook & Stylus</li>
+					</ul>
+				</div>
+				<div id="equipments_right" class="col-md-6">
+					<div class="col-md-4">
+					<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
+					</div>
+					<div class="col-md-8">
+					<select name="equipment_name" class="form-control" class="col-md-9">
+					</select>
+					</div>
+				</div>
+				<div id="equipments_right" class="col-md-6">
+					<div class="col-md-4">
+					<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
+					</div>
+					<div class="col-md-8">
+					<select name="equipment_name" class="form-control" class="col-md-9">
+					</select>
+					</div>
+				</div>
+				<div id="equipments_right" class="col-md-6">
+					<div class="col-md-4">
+					<input type="number" name="equipmnent_quantity" value="" min="1"  size="3" class="col-md-3" />
+					</div>
+					<div class="col-md-8">
+					<select name="equipment_name" class="form-control" class="col-md-9">
+					</select>
+					</div>
+				</div>
+			</div>
+			<div id="notes" class="col-md-12">
+				<h2>Notes</h2>
+				<textarea name="notes" class="form-control"></textarea>
+			</div>
+		</div>
+		</form>
+		<!-- load JS file after the DOM loaded to enable progessive rendering -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="js/init.json"></script>
+		<script src="../lib/dice.js"></script>
+		<script src="../lib/model.js"></script>
+		<script src="../lib/local_storage_driver.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>	

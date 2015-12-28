@@ -1,0 +1,751 @@
+var jsonObject = {
+"attributes": {
+		"bands" : { "1" : "0","4" : "1","7" : "2","11" : "3","15" : "4","18" : "5" },
+		"fields":
+		[
+		{
+			"name":"strength",
+			"label" : "Strenght",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"endurance",
+			"label" : "Endurance",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"agility",
+			"label" : "Agility",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"dexterity",
+			"label" : "Dexterity",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"moxie",
+			"label" : "Moxie",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"chutzpah",
+			"label" : "Chutzpah",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"mech",
+			"label" : "Mech. Apt.",
+			"description" : "",
+			"dice" : "d20"
+		},
+		{
+			"name":"mutant_power",
+			"label" : "Mutant Power",
+			"description" : "",
+			"dice" : "d20"
+		},
+		]
+		},		
+"skillbases" : {
+		"dice" : "d20",
+		"skillbase_bands" : [
+		{ 	"band":"0" , "skill" : "0"},
+		{	"band":"3" , "skill" : "1"},
+		{	"band":"6" , "skill" : "2"},
+		{	"band":"10", "skill" : "3"},
+		{	"band":"14", "skill" : "4"},
+		{	"band":"17", "skill" : "5" }],
+		"fields" :
+		[
+		{
+			"name":"agility_skill_base",
+			"label" : "Agility Skill Base",
+			"description" : "",
+			"attribute" : "agility",
+			"skills" : "agility_skills"
+		},
+		{
+			"name":"dexterity_skill_base",
+			"label" : "Dexterity Skill Base",
+			"description" : "",
+			"attribute" : "dexterity",
+			"skills" : "dexterity_skills"
+		},
+		{
+			"name":"moxie_skill_base",
+			"label" : "Moxie Skill Base",
+			"description" : "",
+			"attribute" : "moxie",
+			"skills" : "moxie_skills"
+		},
+		{
+			"name":"chutzpah_skill_base",
+			"label" : "Chutzpah Skill Base",
+			"description" : "",
+			"attribute" : "chutzpah",
+			"skills" : "chutzpah_skills"
+		},
+		{
+			"name":"mech_skill_base",
+			"label" : "Mech Skill Base",
+			"description" : "",
+			"attribute" : "mech",
+			"skills" : "mech_skills"
+		}
+		]
+		},
+"bonus" : {
+		"dice" : "d20",
+		"bonus_bands" : { "1" : "0","14" : "1","19" : "2" },
+		"fields" :
+		[
+		{
+			"name":"damage_bonus",
+			"label" : "Damage Bonus",
+			"description" : "",
+			"attribute" : "strenght"
+		},
+		{
+			"name":"macho_bonus",
+			"label" : "Macho Bonus",
+			"description" : "",
+			"attribute" : "endurance",	
+		}
+		]
+		},
+"carrying_capacity" : {
+		"dice" : "d20",
+		"bands" : { "12" : "25","13" : "30","14" : "35","15" : "40","16" : "45","17" : "50","18" : "55","19" : "60","20" : "65" },
+		"fields":
+		[
+		{
+			"name":"carrying_capacity",
+			"label" : "Carrying Capacity",
+			"description" : "",
+			"attribute" : "strenght",
+			"addon" : "kg",
+		}
+		],
+},
+"service_group" : { 
+			"dice" : "d20", 
+			"name" : "service_group",
+			"label" : "Service Group",
+			"options" : [
+				{
+					"label" : "HPD&MC",
+					"band" : "4",
+					"description" : "Housing Preservation Development and Mind Control aka 'HPD&MC' HPD & MC is responsible for the health and welfare of all citizens. They house, clothe, provide medicines and make sure that everyone is a Happy Citizen. Are you Happy?",
+					"provide" : "Medicines and drugs"	
+				},
+				{
+					"label" : "Tec Services",
+					"band" : "2",
+					"description" : "Technical Services aka 'Tech Services' If it's broken (which it isn't), tech services can fix it. All manner of devices and weapons can be brought to them to repair. Happily, things don't need repairing often, do they citizen?",
+					"provide" : "Repairs"
+				},
+				{
+					"label" : "R&D",
+					"band" : "16",
+					"description" : "Research and Design aka 'R&D', 'The East Wind' Research and design are in charge of creating new, wonderful devices! These marvels of technology explore brave new worlds and carry out heretofore unknown functions! All troubleshooters should be proud to have R&D's experimental prototypes at their side.",
+					"provide" : "Experimental devices"
+				},
+				{
+					"label" : "PLC",
+					"band" : "11",
+					"description" : "Production, Logistics, and Commissary aka 'PLC' Production, Logistics, and Commissary provides needed goods and services. These include foodstuffs (Hot Fun! and Cold Fun!), drinks (Bouncy Bubble Beverage!), and clothing (One Size Fits All uniforms!). They also have all the lasers.",
+					"provide" : "Food! Clothes! Lasers!"
+				},
+				{
+					"label" : "CPU",
+					"band" : "18",
+					"description" : "Central Processing Unit aka 'CPU' Central Processing Unit ensures that all other service groups in carry out their tasks in coordination with each other. They are essential to the flawless functioning of Alpha Complex. They provide endless amounts of guiding hierarchy. Most significantly they help note potentially treasonous or promotional behavior.",
+					"provide" : "Records of missions, witnesses of other Troubleshooter's actions."
+				},
+				{
+					"label" : "Power Services",
+					"band" : "14",
+					"description" : "Power Services aka 'Power Services' Power services provides power for the entire complex! This difficult work typically involves them standing around large poles drinking Hot Fun for many hours a day. They also are in charge of reqisitioning large vehicles and devices. Power services members tend to be early risers.",
+					"provide" : "Big Devices and Vehicles"
+				},
+				{
+					"label" : "Armed Services",
+					"band" : "8",
+					"description" : "Armed Services aka 'The Army' Armed Services protects Alpha Complex from invaders from without. The fact that no one has invaded Alpha Complex in its history is testament to their excellent work! These stalwart troops are armed to the teeth and prepared to die for the safety of our complex.",
+					"provide" : "Heavy Weaponry"
+				},
+				{
+					"label" : "IntSec",
+					"band" : "0",
+					"description" : "Internal Security aka 'IntSec' Unfortunately, not all citizens of Alpha Complex are Good and Loyal (tm). It has been said that a few might even be corrupt followers of the Dark Computer. But not for long, with internal security around to take care of them. Their treasonous behaviour is Being Watched, even now.",
+					"provide" : "Security for all Citizens. And Termination Vouchers"
+				}
+			] 
+			},
+"mutation" : "1",
+"social_group" : "1",
+"weapon" : "Laser",
+"armour" : "L",
+"skills" : [
+			{
+				"name":"skill_force_sword",
+				"label" : "Force Sword",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_grenade",
+				"label" : "Grenade",
+				"description" : "Missile Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_neurowhip",
+				"label" : "Neurowhip",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_primitive_melee_weapons",
+				"label" : "Primitive Melee Weapons",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_truncheon",
+				"label" : "Truncheon",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_unarmed",
+				"label" : "Unarmed",
+				"description" : "Melee Combat skills.",
+				"skillbase" : "agility_skill_base",
+			},
+			{
+				"name":"skill_bootlicking",
+				"label" : "Bootlicking",
+				"description" : "Ingratiating yourself with your superiors.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_bribery",
+				"label" : "Bribery",
+				"description" : "Trading items for services. Use of this skill is Treasonous.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_con",
+				"label" : "Con",
+				"description" : "Persuading someone to let you do something that they probably shouldn’t.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_fast_talk",
+				"label" : "Fast Talk",
+				"description" : "Like Con, but quicker. Getting past guards at a checkpoint is Fast Talk.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_forgery",
+				"label" : "Forgery",
+				"description" : "Faking forms and signatures. Use of this skill is Treasonous.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_interrogation",
+				"label" : "Interrogation",
+				"description" : "Extracting useful information from Commie scum.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_intimidation",
+				"label" : "Intimidation",
+				"description" : "Getting cooperation from your inferiors.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_motivation",
+				"label" : "Motivation",
+				"description" : "Getting a few people thinking your idea is a good idea.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_oratory",
+				"label" : "Oratory",
+				"description" : "Speech-giving. Motivation for large groups.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_psychescan",
+				"label" : "Psychescan",
+				"description" : "Lie detection when you are talking to someone.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_suprious_logic",
+				"label" : "Suprious Logic",
+				"description" : "Con & Fast Talk for use against Bots and computers.",
+				"skillbase" : "chutzpah_skill_base",
+			},
+			{
+				"name":"skill_energy_weapons",
+				"label" : "Energy Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_field_weapons",
+				"label" : "Field Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_laser_weapons",
+				"label" : "Laser Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_projectile_weapons",
+				"label" : "Projectile Weapons",
+				"description" : "Missile Combat skills. Includes repairing them.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_primitive_missile_weapons",
+				"label" : "Primitive Missile Weapons",
+				"description" : "Bow and arrows, Bouncy Bubble Beverage containers...",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_vehicle_aimed_weapons",
+				"label" : "Vehicle Aimed Weapons",
+				"description" : "Vehicle Combat skills.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_vehicle_field_weapons",
+				"label" : "Vehicle Field Weapons",
+				"description" : "Vehicle Combat skills.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_vehicle_launched_weapons",
+				"label" : "Vehicle Launched Weapons",
+				"description" : "Vehicle Combat skills.",
+				"skillbase" : "dexterity_skill_base",
+			},
+			{
+				"name":"skill_habitat_engineering",
+				"label" : "Habitat Engineering",
+				"description" : "Knowledge of the air, comm, transport, water, and waste systems.",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_jackobot_operation",
+				"label" : "JackoBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_docbot_operation",
+				"label" : "DocBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_transbot_operation",
+				"label" : "TransBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_Scrubot_operation",
+				"label" : "ScruBot Operation and Maintenance",
+				"description" : "How to use and repair the various types of bots",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_vulturecraft_operation",
+				"label" : "Vulturecraft Operation and Maintenance",
+				"description" : "How to use and repair various vehicle types.",
+				"skillbase" : "mech_skill_base",
+			},
+			,
+			{
+				"name":"skill_autocar_operation",
+				"label" : "Autocar Operation and Maintenance",
+				"description" : "How to use and repair various vehicle types.",
+				"skillbase" : "mech_skill_base",
+			},
+			{
+				"name":"skill_biochemical_therapy",
+				"label" : "Biochemical Therapy",
+				"description" : "Better living through Chemistry.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_biosciences",
+				"label" : "Biosciences",
+				"description" : "Making mutant monsters",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_chemical_engineering",
+				"label" : "Chemical Engineering",
+				"description" : "Mixing chemicals, often with explosive results",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_data_analysis",
+				"label" : "Data Analysis",
+				"description" : "Making sense of Computer-printed materials",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_data_search",
+				"label" : "Data Search",
+				"description" : "Finding information using Friend Computer",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_demolition",
+				"label" : "Demolition",
+				"description" : "Blowing big things up without blowing yourself up too",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_electronic_engineering",
+				"label" : "Electronic Engineering",
+				"description" : "Making electronic devices from resistors and capacitors.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_mechanical_engineering",
+				"label" : "Mechanical Engineering",
+				"description" : "Rube Goldberg contraptions and such.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_medical",
+				"label" : "Medical",
+				"description" : "Healing injured Citizens.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_nuclear_engineering",
+				"label" : "Nuclear Engineering",
+				"description" : "If you want to stop a reactor from melting down, you need this",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_old_reckoning_cultures",
+				"label" : "Old Reckoning Cultures",
+				"description" : "Knowledge of Pre-Oops people and things",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_security",
+				"label" : "Security",
+				"description" : "Disabling locks and alarms.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_stealth",
+				"label" : "Stealth",
+				"description" : "The art of not being seen",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_surveillance",
+				"label" : "Surveillance",
+				"description" : "Bugging and debugging things.",
+				"skillbase" : "moxie_skill_base",
+			},
+			{
+				"name":"skill_survival",
+				"label" : "Survival",
+				"description" : "How to live Outdoors without generating clone replacements",
+				"skillbase" : "moxie_skill_base",
+			}
+		],
+"avaliable_equipments" : {
+			"starting_money" : "100",
+			"items" : [
+				{
+					"cost" : "1",
+					"name" : "Bag of Cruncheetym Algae Chips",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "3",
+					"name" : "Boot Polish",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Bottle of Bouncy Bubble Beverage",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Bottle of Super Shine Mouthwash",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "1",
+					"name" : "Bucket",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "50",
+					"name" : "Bullhorn",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "2",
+					"name" : "Cold Fun in a self-sealing puck",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "First Aid Kit",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "10",
+					"name" : "Flashlight",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "50",
+					"name" : "Gas Mask",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "2",
+					"name" : "Happiness Energy Bar",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "100",
+					"name" : "Hottorch",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Official Teela-O Picture Mirror",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "Personal Hygiene Kit",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "50",
+					"name" : "Personalized Jumpsuit",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "12",
+					"name" : "Pillow",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "1",
+					"name" : "Plasticord (1 credit per meter)",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "15",
+					"name" : "Poncho",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "Smoke Alarm",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "SuperGum",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "SuperGum Solvent",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "25",
+					"name" : "Thermos",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "8",
+					"name" : "Troubleshooting and You! Pamphlet",
+					"clerence" : "red"
+				},
+				{
+					"cost" : "5",
+					"name" : "Velcro Strip (5 creds per meter)",
+					"clerence" : "red"
+				}
+			]
+		},
+"default_equipments" : {
+			"plasticreds" : "100",
+			"weapon" : {
+				"name" : "Laser Pistol",
+				"type" : "L",
+				"damage" : "8",
+				"range" : "20"
+			},
+			"armour" :{
+				"type" : "L",
+				"rating" : "4"
+			},
+			"items" : [
+				{
+					"amount" : "1",
+					"name" : "Red Reflect Armor"
+				},
+				{
+					"amount" : "1",
+					"name" : "Laser Pistol"
+				},
+				{
+					"amount" : "1",
+					"name" : "Red Laser Barrel"
+				},
+				{
+					"amount" : "1",
+					"name" : "Jumpsuit"
+				},
+				{
+					"amount" : "1",
+					"name" : "Utility Belt with Pouches"
+				},
+				{
+					"amount" : "1",
+					"name" : "Comm Unit Type I"
+				},
+				{
+					"amount" : "1",
+					"name" : "Notebook & Stylus"
+				}
+			]
+		},
+"service_group_skills" : {
+		"groups": [
+			{
+				"group": "IntSec",
+				"skills": [
+					{"skill":"skill_truncheon"},
+					{"skill":"skill_unarmed"},
+					{"skill":"skill_interrogation"},
+					{"skill":"skill_intimidation"},
+					{"skill":"skill_laser_weapons"},
+					{"skill":"skill_security"},
+					{"skill":"skill_surveillance"}
+				]
+			},
+			{
+				"group": "Tech Services",
+				"skills": [
+					{"skill":"skill_suprious_logic"},
+					{"skill":"skill_autocar_operation"},
+					{"skill":"skill_transbot_operation"},
+					{"skill":"skill_docbot_operation"},
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_scrubot_operation"},
+					{"skill":"skill_electronic_engineering"},
+					{"skill":"skill_mechanical_engineering"}
+				]
+			},
+			{
+				"group": "HPD&MC",
+				"skills": [
+					{"skill":"skill_bootlicking"},
+					{"skill":"skill_con"},
+					{"skill":"skill_forgery"},
+					{"skill":"skill_oratory"},
+					{"skill":"skill_docbot_operation"},
+					{"skill":"skill_biochemical_therapy"},
+					{"skill":"skill_medical"}
+				]
+			},
+			{
+				"group": "Armed Services",
+				"skills": [
+					{"skill":"skill_grenade"},
+					{"skill":"skill_primitive_melee_weapons"},
+					{"skill":"skill_unarmed"},
+					{"skill":"skill_motivation"},
+					{"skill":"skill_laser_weapons"},
+					{"skill":"skill_projectile_weapons"},
+					{"skill":"skill_demolition"},
+					{"skill":"skill_survival"},
+					{"skill":"skill_vulturecraft_operation"}
+				]
+			},
+			{
+				"group": "PLC",
+				"skills": [
+					{"skill":"skill_bribery"},
+					{"skill":"skill_fast_talk"},
+					{"skill":"skill_forgery"},
+					{"skill":"skill_habitat_engineering"},
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_biosciences"}
+				]
+			},
+			{
+				"group": "Power Services",
+				"skills": [
+					{"skill":"skill_suprious_logic"},
+					{"skill":"skill_habitat_engineering"},
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_chemical_engineering"},
+					{"skill":"skill_electronic_engineering"},
+					{"skill":"skill_mechanical_engineering"},
+					{"skill":"skill_nuclear_engineering"}
+				]
+			},
+			{
+				"group": "R&D",
+				"skills": [
+					{"skill":"skill_jackobot_operation"},
+					{"skill":"skill_biosciences"},
+					{"skill":"skill_data_analysis"},
+					{"skill":"skill_data_search"},
+					{"skill":"skill_electronic_engineering"},
+					{"skill":"skill_mechanical_engineering"}
+				]
+			},
+			{
+				"group": "CPU",
+				"skills": [
+					{"skill":"skill_fast_talk"},
+					{"skill":"skill_intimidation"},
+					{"skill":"skill_motivation"},
+					{"skill":"skill_psychescan"},
+					{"skill":"skill_security"},
+					{"skill":"skill_data_analysis"},
+					{"skill":"skill_data_search"}
+				]
+			}
+		]
+			
+	}			
+}

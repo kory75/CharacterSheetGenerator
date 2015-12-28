@@ -1,0 +1,175 @@
+body {
+  background-color: white;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 14px; }
+
+h1 {
+  background-color: #aaa;
+  color: black;
+  padding: 1% 2%;
+  margin: 0;
+  text-align: center;
+  border: 2px solid black;
+  font-style: italic;
+  font-weight: bold; }
+
+h2 {
+  background-color: black;
+  color: white;
+  padding: 1% 2%;
+  text-align: center;
+  margin-left: 0;
+  font-style: italic;
+  font-weight: bold; }
+
+a {
+  color: black; }
+
+a:hover, a:visited, a:focus {
+  text-decoration: none; }
+
+table {
+  border: 0; }
+
+label {
+  font-weight: lighter;
+  font-size: 1.1em; }
+
+th {
+  text-align: center; }
+
+.character-sheet {
+  border: 2px solid black;
+  padding: 0;
+  margin: 1% 1%;
+  width: 98%; }
+
+#attributes_box, #weapons, #skill_box {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0; }
+
+.skill_holder {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding-top: 10px; }
+
+.skill_head {
+  border-right: 1px solid black;
+  padding: 10px 0; }
+
+.skill_head label {
+  font-style: italic;
+  font-weight: bold; }
+
+#attributes_box_right label {
+  font-style: italic; }
+
+#top-box label, #secret_box label {
+  font-weight: bold; }
+
+.nav-tabs li a {
+  margin-top: 8px; }
+
+.color-rank {
+  padding: 5px 10px 4px 4px;
+  margin: 4px 12px 0px 0; }
+
+#rank_holder {
+  margin-left: 18px; }
+
+.color-rank-ir {
+  color: black; }
+
+.color-rank-r {
+  color: red; }
+
+.color-rank-o {
+  color: orange; }
+
+.color-rank-y {
+  color: yellow; }
+
+.color-rank-g {
+  color: green; }
+
+.color-rank-b {
+  color: blue; }
+
+.color-rank-i {
+  color: #4b0082; }
+
+.color-rank-v {
+  color: violet; }
+
+.color-rank-uv {
+  color: white;
+  background-color: black; }
+
+#attributes_box_left label:first-child {
+  margin-bottom: 20px; }
+#attributes_box_left input[name=strength] {
+  margin-bottom: 20px; }
+#attributes_box_left .roll_one_attribute {
+  cursor: pointer; }
+
+.navbar-default {
+  margin-bottom: 0; }
+
+.group_skill {
+  font-weight: bold;
+  background-color: #d9d2d2; }
+
+.weapon_experimental input {
+  margin: 0px 0 0 21px;
+  width: 20px; }
+
+@media all {
+  .page-break {
+    display: none; }
+ }
+
+@page {
+  size: A3;
+  margin-left: -5cm;
+  margin-right: -5cm; }
+
+@media print {
+  body {
+    background: white;
+    color: black;
+    padding: 2% 5cm; }
+
+  h1 {
+    background-color: black;
+    color: #eee;
+    padding: 1% 2%;
+    margin: 0; }
+
+  h1.secret-page {
+    page-break-before: always; }
+
+  #skills-box {
+    page-break-after: always; }
+
+  .roll_one_attribute {
+    display: none; }
+
+  #message_box {
+    display: none; }
+
+  #menu-bar {
+    display: none; }
+
+  input, select {
+    border: none 0px;
+    box-shadow: none;
+    border-bottom: 2px solid black;
+    border-radius: 0; }
+
+  .page-break {
+    display: block;
+    page-break-before: always; }
+ }
