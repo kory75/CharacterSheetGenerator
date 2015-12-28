@@ -20,10 +20,19 @@ HTML5, js, jQuery, Bootstrap, CSS, Sass, AngularJs
 
 ##Current Character Sheet Generators
 
-Paranoia 2nd Edition - Alpha
+Paranoia 2nd Edition - Alpha version 0.8 (mostly works, saves only one character)
+ 
+Call of Chtulhu - Alpha 0.1
 
-Call of Chtulhu - Alpha
+Warhammer Fantasy - Alpha 0.1
 
+##Host
+
+Hosted on Github
+
+http://kory75.github.io/CharacterSheetGenerator/
+
+You can also run it from your local file system (requires internet access for java libs)
 
 Licence:
 GPLv2
