@@ -5,7 +5,7 @@ var jsonObject = {
 		[
 		{
 			"name":"strength",
-			"label" : "Strenght",
+			"label" : "Strength",
 			"description" : "",
 			"dice" : "d20"
 		},
